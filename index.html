@@ -1,1 +1,382 @@
-<strong>ANVIL</strong> is a concept-first directing duo comprised of Toby Sherman and Tank Buzadi.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ANVIL</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 75px;
+            font-weight: bold;
+            line-height: auto;
+        }
+
+        .home-link,
+        .home-link:active,
+        .home-link:hover,
+        .home-link:visited {
+            color: #000;
+            text-decoration: none;
+        }
+
+        #venn {
+            width: 65em;
+            margin: .5em auto;
+            padding: 1em;
+            position: relative;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #fff;
+            height: 40em;
+            font-size: 80%;
+        }
+
+        #venn span {
+            display: none;
+        }
+
+        .circle {
+            border: .2em solid #000;
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle p {
+            margin-top: 120px;
+            font-weight: 100;
+        }
+
+        .icon {
+            z-index: 999999;
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            cursor: move;
+            border: 0px solid black;
+            border-radius: 0%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .icon-caption {
+            font-size: 16px;
+            margin-top: 110px;
+        }
+
+        #icon1-left {
+            top: 50%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            background-image: url('/assets/home/videodirection.png');
+            background-size: cover;
+            transition: transform 0.2s ease;
+        }
+
+        #icon2-left {
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url('/assets/home/analogediting.png');
+            background-size: cover;
+            transition: transform 0.2s ease;
+        }
+
+        #icon3-left {
+            top: 20%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            background-image: url('/assets/home/galleries.png');
+            background-size: cover;
+            transition: transform 0.2s ease;
+        }
+
+        #icon-middle {
+            top: 195%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            background-image: url('/assets/home/about.png');
+            background-size: cover;
+            transition: transform 0.2s ease;
+        }
+
+        #icon1-right {
+            top: 45%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+            background-image: url('/assets/home/youtubespa.png');
+            background-size: cover;
+            transition: transform 0.2s ease;
+        }
+
+        #icon2-right {
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url('/assets/home/friends.png');
+            background-size: cover;
+            transition: transform 0.2s ease;
+        }
+
+        #icon3-right {
+            top: 20%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            background-image: url('/assets/home/guestbook.png');
+            background-size: cover;
+            transition: transform 0.2s ease;
+        }
+
+
+        #icon1-left:active,
+        #icon2-left:active,
+        #icon3-left:active,
+        #icon-middle:active,
+        #icon1-right:active,
+        #icon2-right:active,
+        #icon3-right:active {
+            transform: translate(-50%, -50%) scale(1.03);
+            /* -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.34);
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.34); */
+        }
+
+
+        #c1 {
+            bottom: 1em;
+            left: 0;
+            background-color: none;
+        }
+
+        #c2 {
+            bottom: 1em;
+            left: 25em;
+            background-color: none;
+        }
+
+        .joined {
+            position: absolute;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        #j12 {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25em;
+            height: 7em;
+            padding-top: 3em;
+        }
+
+        .caption {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            bottom: -3em;
+            font-size: 20px;
+            font-weight: 100;
+            font-style: italic;
+        }
+
+        .menu-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .menu-dropdown {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .menu-dropdown {
+            font-size: 16px;
+            margin: 8px;
+            font-family: 'Times New Roman', Times, serif;
+            color: #000;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px 12px;
+            cursor: pointer;
+            background-color: #f5f5f5;
+        }
+
+        a.link,
+        a.link:link,
+        a.link:visited,
+        a.link:hover,
+        a.link:active {
+            text-decoration: none;
+            color: #000;
+        }
+
+        a.link:hover {
+            color: #0000EE;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1><a class="home-link" href="index.html">ANVIL</a></h1>
+        <div style="width: 750px; margin-top: -25px">
+            <p>ANVIL is a concept-first directing duo comprised of Toby Sherman and Tank Buzadi.</p>
+        </div>
+    </center>
+
+    <br>
+
+    <div id="venn">
+        <div id="c1" class="circle">
+            <div id="collection" class="ans1"></div>
+            <div class="icon" id="icon1-left">
+                <p class="icon-caption"><a class="link" href="videodirection.html">Video&nbsp;Direction</a></p>
+            </div>
+            <div class="icon" id="icon2-left">
+                <p class="icon-caption"><a class="link" href="analogediting.html">Analog&nbsp;Editing</a></p>
+            </div>
+            <div class="icon" id="icon3-left">
+                <p class="icon-caption"><a class="link" href="galleries.html">Galleries</a></p>
+            </div>
+            <p class="caption">"Work"</p>
+        </div>
+
+        <div id="c2" class="circle">
+            <div id="collection" class="ans2"></div>
+            <div class="icon" id="icon1-right">
+                <p class="icon-caption"><a class="link" href="youtubespa.html">YouTube&nbsp;Spa</a></p>
+            </div>
+            <div class="icon" id="icon2-right">
+                <p class="icon-caption"><a class="link" href="friends.html">Friends</a></p>
+            </div>
+            <div class="icon" id="icon3-right">
+                <p class="icon-caption"><a class="link" href="https://www.yourworldoftext.com/~ANVIL/">Guestbook</a></p>
+            </div>
+            <p class="caption">"Play"</p>
+        </div>
+
+        <div id="j12" class="joined">
+            <div id="collection" class="both"></div>
+            <div class="icon" id="icon-middle">
+                <p class="icon-caption"><a class="link" href="about.html">About</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <form>
+            <select class="menu-dropdown" onchange="redirectToPage(this)">
+                <option value="Menu">Menu</option>
+                <option value="index.html">&#127968;&#xFE0F;&nbsp;Home</option>
+                <optgroup label="Work">
+                    <option value="videodirection.html">&#128249;&#xFE0F;&nbsp;Video Direction</option>
+                    <option value="analogediting.html">&#127902;&#xFE0F;&nbsp;Analog Editing</option>
+                    <option value="galleries.html">&#128444;&#xFE0F;&nbsp;Galleries</option>
+                </optgroup>
+                <optgroup label="Intersect">
+                    <option value="about.html">&#8265;&#xFE0F;&nbsp;About</option>
+                </optgroup>
+                <optgroup label="Play">
+                    <option value="youtubespa.html">&#128133;&#xFE0F;&nbsp;YouTube Spa</option>
+                    <option value="https://www.yourworldoftext.com/~ANVIL/">&#128221;&#xFE0F;&nbsp;Guestbook
+                    </option>
+                    <option value="friends.html">&#129730;&#xFE0F;&nbsp;Friends</option>
+                </optgroup>
+            </select>
+        </form>
+    </div>
+
+    <script>
+        // Menu redirect
+        function redirectToPage(dropdown) {
+            var selectedPage = dropdown.value;
+            if (selectedPage !== "Menu") {
+                window.location.href = selectedPage;
+            }
+        }
+
+        function resetDropdown() {
+            document.querySelector(".menu-dropdown").selectedIndex = 0;
+        }
+
+        window.onload = resetDropdown;
+
+        // Venn diagram
+        dragElement(document.getElementById("icon1-left"));
+        dragElement(document.getElementById("icon2-left"));
+        dragElement(document.getElementById("icon3-left"));
+        dragElement(document.getElementById("icon-middle"));
+        dragElement(document.getElementById("icon1-right"));
+        dragElement(document.getElementById("icon2-right"));
+        dragElement(document.getElementById("icon3-right"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            elmnt.addEventListener("mousedown", dragMouseDown);
+            elmnt.addEventListener("touchstart", dragMouseDown);
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                if (e.type === "touchstart") {
+                    pos3 = e.touches[0].clientX;
+                    pos4 = e.touches[0].clientY;
+                } else {
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                }
+                document.addEventListener("mouseup", closeDragElement);
+                document.addEventListener("touchend", closeDragElement);
+                document.addEventListener("mousemove", elementDrag);
+                document.addEventListener("touchmove", elementDrag);
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                if (e.type === "touchmove") {
+                    pos1 = pos3 - e.touches[0].clientX;
+                    pos2 = pos4 - e.touches[0].clientY;
+                    pos3 = e.touches[0].clientX;
+                    pos4 = e.touches[0].clientY;
+                } else {
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                }
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                document.removeEventListener("mouseup", closeDragElement);
+                document.removeEventListener("touchend", closeDragElement);
+                document.removeEventListener("mousemove", elementDrag);
+                document.removeEventListener("touchmove", elementDrag);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
