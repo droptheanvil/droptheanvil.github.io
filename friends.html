@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Friends | ANVIL</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+</head>
+
+<body>
+    <div id="overlay" onclick="toggleOverlay()"></div>
+
+    <div id="content">
+        <center>
+            <div id="contentContainer">
+                <h1><a class="home-link" href="index.html">ANVIL</a></h1>
+                <audio id="myAudio" src="assets/clang.mp3"></audio>
+            </div>
+
+            <ul id="custom-details" class="menu-content">
+                <li class="menu-item">
+                    <form>
+                        <select class="menu-dropdown" onchange="redirectToPage(this)">
+                            <option value="Menu">Menu</option>
+                            <option value="index.html">&#127968;&#xFE0F;&nbsp;Home</option>
+                            <optgroup label="Work">
+                                <option value="videodirection.html">&#128249;&#xFE0F;&nbsp;Video Direction</option>
+                                <option value="analogediting.html">&#127902;&#xFE0F;&nbsp;Analog Editing</option>
+                                <option value="galleries.html">&#128444;&#xFE0F;&nbsp;Galleries</option>
+                            </optgroup>
+                            <optgroup label="Intersect">
+                                <option value="about.html">&#8265;&#xFE0F;&nbsp;About</option>
+                            </optgroup>
+                            <optgroup label="Play">
+                                <option value="youtubespa.html">&#128133;&#xFE0F;&nbsp;YouTube Spa</option>
+                                <option value="https://www.yourworldoftext.com/~ANVIL/">&#128221;&#xFE0F;&nbsp;Guestbook
+                                </option>
+                                <option value="friends.html">&#129730;&#xFE0F;&nbsp;Friends</option>
+                            </optgroup>
+                        </select>
+                    </form>
+                </li>
+                <li class="menu-item"><a href="mailto:someone@example.com"><button class="tablinks">Email</button></a>
+                </li>
+                <li class="menu-item"><button id="toggleButton" class="tablinks">Dark mode</button></li>
+                <li class="menu-item"><button id="clang-heading" class="tablinks">&#128165;&#xFE0F;</button></li>
+            </ul>
+
+            <div id="contentContainer">
+                <br>
+                <br>
+                <h3>Friends</h3>
+
+                <!-- Top 3 -->
+                <table>
+                    <tr>
+                        <td width="200px">
+                            <img class="medal-icon" src="assets/friends/medal1.png">
+                            <img width="200px" src="assets/friends/sam.PNG">
+                        </td>
+                        <td>
+
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Sam</u></strong></a><br><br>Sam is such a classy
+                                guy.
+                                He wouldn’t hurt a fly unless it was being annoying. Sam reminds me of Backwoods and
+                                808’s.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img class="medal-icon" src="assets/friends/medal2.png">
+                            <img width="200px" src="assets/friends/karensa.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Karensa</u></strong></a><br><br>Karensa is my
+                                favourite tornado. She shows me new colours and i like that.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img class="medal-icon" src="assets/friends/medal3.png">
+                            <img width="200px" src="assets/friends/michael.png">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Michael</u></strong></a><br><br>Michael is a very
+                                smart person. I admire his intellect and judo skills. One day he will have a nice
+                                backyard.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <br>
+
+                <!-- Awards -->
+                <table>
+                    <tr>
+                        <td width="200px">
+                            <img class="medal-icon" src="assets/friends/award1.png">
+                            <img width="200px" src="assets/friends/evan.png">
+                        </td>
+                        <td>
+
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Evan</u></strong></a><br><br>Evan is a mystery.
+                                He
+                                has secret powers and everyone likes him. I wonder what he thinks about.</p>
+
+                            <p><i>*&nbsp;Most&nbsp;improved</i></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img class="medal-icon" src="assets/friends/award2.png">
+                            <img width="200px" src="assets/friends/greg.png">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Greg</u></strong></a><br><br>Greg is my BFF. He
+                                is so
+                                creative and even very cool. He helped me program this website. I think one day he will
+                                have
+                                children.</p>
+
+                            <p><i>*&nbsp;Creative&nbsp;inspiration</i></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img class="medal-icon" src="assets/friends/award3.png">
+                            <img width="200px" src="assets/friends/mettro.png">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Mettro</u></strong></a><br><br>Mettro is a very
+                                smart
+                                wine sipper. His dialogue lines are never pre-written which makes the clients love him.
+                                As
+                                do i.</p>
+
+                            <p><i>*&nbsp;Friend&nbsp;of&nbsp;the&nbsp;month</i></p>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <br>
+
+                <!-- Others -->
+                <table>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/adamh.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Adam</u></strong></a><br><br>Adam feels like
+                                drinking
+                                Pepsi while eating spicy food. What a ride. I like the way he laughs.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/andrew.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Andrew</u></strong></a><br><br>Andrew has an
+                                exceptional sound system in his car. And he knows when it’s time to start drinking. I
+                                may
+                                never understand exactly what it is that he does.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/callum.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Callum</u></strong></a><br><br>Callum always
+                                wears
+                                undershirts. He loves Grand Theft Auto. I think that he is a spy. His eyes have cameras
+                                inside them. I wonder if he works out.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/clare.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Clare</u></strong></a><br><br>Clare inspires me
+                                to
+                                run, but i hate running. I think she must be happy as someone who is physically active.
+                                I
+                                think i might be too.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/cruz.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Cruz</u></strong></a><br><br>Cruz is way shorter
+                                than
+                                i remember, so it’s always a surprise to see her. She is a nice shiny bubble that pops
+                                when
+                                you touch it. It’s a good memory.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/dan.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Dan</u></strong></a><br><br>Dan is like an
+                                interesting rock, in that he has been cool far longer than you could imagine. Dan
+                                reminds me
+                                of mold (non-derogatory).</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/emmanuelle.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Emmanuelle</u></strong></a><br><br>Emmanuelle is
+                                a
+                                secret agent. I’m not sure if she knows it yet. Either way, she has an eye for
+                                everything.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/fred.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Fred</u></strong></a><br><br>Fred is a method
+                                actor.
+                                Right now he’s playing a human being. Fred lives in Toronto. I like that part.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/gwenn.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Gwen</u></strong></a><br><br>Gwen is suspiciously
+                                witchy, but in a good way. I think that her and Cameron brew potions while everyone is
+                                sleeping. Perhaps not even Cameron knows her secrets.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/jack.PNG">
+                        </td>
+                        <td>
+
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Jack</u></strong></a><br><br>Jack is a million
+                                dollar
+                                man. I think he’s never smelled bad once. He would flirt with a wall if it could talk
+                                back.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/jill.PNG">
+                        </td>
+                        <td>
+
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Jill</u></strong></a><br><br>Jill is like a nice
+                                big
+                                smile. I think she knows a thing or two about the world’s secrets. Like a warm cup of
+                                tea.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/JOSHE.PNG">
+                        </td>
+                        <td>
+
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Josh</u></strong></a><br><br>Josh is a silly
+                                little
+                                trickster. He has a sneaky smile and a good creative soul. One day i think he will have
+                                a
+                                nice car.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/kinkade.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Kinkade</u></strong></a><br><br>Kinkade is an
+                                angel.
+                                I think he will live forever. His smile is contagious.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/kiyan.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Kiyan</u></strong></a><br><br>Kiyan doesn’t like
+                                to
+                                talk after he takes edibles, but that’s okay because we already know he is very smart.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/mattc.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a style="font-size:32px;"><strong><u>Matt
+                                            C.</u></strong></a><br><br>Matt C. is a very crazy boy. I think he knows
+                                that
+                                too. If the game of life was set to easy mode, he’d be your first BFF.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/matth.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a style="font-size:32px;"><strong><u>Matt
+                                            H.</u></strong></a><br><br>Matt H. is a very safe driver. He also likes
+                                Pokemon.
+                                I think that’s awesome.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/mayua.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Maya</u></strong></a><br><br>Maya would win the
+                                Daughter of a Harley Davidson owner Competition. I envy her sunglasses collection.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/mei.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Mei</u></strong></a><br><br>Mei is an enigma. I
+                                think
+                                she must be a DLC character. She always appears in random cutscenes. Her paintings are
+                                cool.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/meredith.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Meredith</u></strong></a><br><br>Meredith is an
+                                important figure, she is the matriarch. I learn a lot when she’s around.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/sabina.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Sabina</u></strong></a><br><br>Sabina is a
+                                superfood.
+                                She can clean her house while hungover. I find that very impressive.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/spookjy.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Spooky</u></strong></a><br><br>Spooky always eats
+                                toothpicks, i wonder if he has ever swallowed one by accident. Either way, i think he
+                                will
+                                go far in life. And i like the shape of his head.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/stephen.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Stephen</u></strong></a><br><br>Stephen is very
+                                special. He reminds me of a bag of Lays Original Chips. He is sneakily very good.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200px">
+                            <img width="200px" src="assets/friends/syd.PNG">
+                        </td>
+                        <td>
+                            <p style="position: relative;"><a
+                                    style="font-size:32px;"><strong><u>Sydney</u></strong></a><br><br>Sydney always
+                                knows
+                                where the vape is, even if she won’t admit it. I admire her swagger.</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </center>
+    </div>
+
+    <script>
+        // Menu redirect
+        function redirectToPage(dropdown) {
+            var selectedPage = dropdown.value;
+            if (selectedPage !== "Menu") {
+                window.location.href = selectedPage;
+            }
+        }
+
+        function resetDropdown() {
+            document.querySelector(".menu-dropdown").selectedIndex = 0;
+        }
+
+        window.onload = resetDropdown;
+
+            // Clang
+            var heading = document.getElementById("clang-heading");
+            var audio = document.getElementById("myAudio");
+
+            heading.addEventListener("click", function () {
+                audio.play();
+            });
+
+            //Dark mode
+            function isMobileDevice() {
+                return /Mobi|Android/i.test(navigator.userAgent);
+            }
+
+            function trackMovement(event) {
+                const rootElement = document.documentElement;
+
+                if (isMobileDevice()) {
+                    // Mobile
+                    const touch = event.touches[0] || event.changedTouches[0];
+                    rootElement.style.setProperty('--cursorXPos', `${touch.clientX}px`);
+                    rootElement.style.setProperty('--cursorYPos', `${touch.clientY}px`);
+                } else {
+                    // Desktop
+                    rootElement.style.setProperty('--cursorXPos', `${event.clientX}px`);
+                    rootElement.style.setProperty('--cursorYPos', `${event.clientY}px`);
+                }
+            }
+
+            function toggleFlashlight() {
+                const rootElement = document.documentElement;
+                rootElement.classList.toggle('flashlight-on');
+            }
+
+            document.addEventListener(isMobileDevice() ? 'touchmove' : 'mousemove', trackMovement);
+
+            const toggleButton = document.getElementById('toggleButton');
+            toggleButton.addEventListener('click', toggleFlashlight);
+
+            document.addEventListener('click', function (event) {
+                const rootElement = document.documentElement;
+                if (event.target !== toggleButton && !toggleButton.contains(event.target)) {
+                    rootElement.classList.remove('flashlight-on');
+                }
+            });
+    </script>
+</body>
+
+</html>
