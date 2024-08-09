@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Videogame Photography | ANVIL</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+</head>
+
+<body>
+    <div id="contentContainer">
+        <h1><a class="home-link" href="index.html">ANVIL</a></h1>
+        <audio id="myAudio" src="assets/clang.mp3"></audio>
+
+        <ul class="menu-content">
+            <li class="menu-item">
+                <form>
+                    <select class="menu-dropdown" onchange="redirectToPage(this)">
+                        <option value="Menu">Menu</option>
+                        <option value="index.html">&#127968;&#xFE0F;&nbsp;Home</option>
+                        <optgroup label="Work">
+                            <option value="videodirection.html">&#128249;&#xFE0F;&nbsp;Video Direction</option>
+                            <option value="analogediting.html">&#127902;&#xFE0F;&nbsp;Analog Editing</option>
+                            <option value="galleries.html">&#128444;&#xFE0F;&nbsp;Galleries</option>
+                        </optgroup>
+                        <optgroup label="Intersect">
+                            <option value="about.html">&#8265;&#xFE0F;&nbsp;About</option>
+                        </optgroup>
+                        <optgroup label="Play">
+                            <option value="youtubespa.html">&#128133;&#xFE0F;&nbsp;YouTube Spa</option>
+                            <option value="https://www.yourworldoftext.com/~ANVIL/">&#128221;&#xFE0F;&nbsp;Guestbook
+                            </option>
+                            <option value="friends.html">&#129730;&#xFE0F;&nbsp;Friends</option>
+                        </optgroup>
+                    </select>
+                </form>
+            </li>
+            <li class="menu-item"><a href="mailto:anvil.hello@gmail.com"><button class="tablinks">Email</button></a>
+            </li>
+            <li class="menu-item"><button id="toggleButton" class="tablinks menu-no-mobile">Dark mode</button></li>
+            <li class="menu-item"><button id="clang-heading" class="tablinks menu-no-mobile">&#128165;&#xFE0F;</button>
+            </li>
+        </ul>
+
+        <h3>&#128444;&#xFE0F;&nbsp;Videogame&nbsp;Photography&nbsp;&#128444;&#xFE0F;</h3>
+        <p style="margin-top:-20px">Videogames… can't live with 'em can't live without 'em..</p>
+        <p>Not sure what to say about this one, but there's something cool about how people from around the world can
+            recognize these images, and the worlds they depict. #relatable. We shoot these on a 0.2 Megapixel camera.
+        </p>
+
+        <br />
+
+        <img class="full-img" src="/assets/videogamephotography/01.png">
+        <img class="full-img" src="/assets/videogamephotography/02.png">
+        <img class="full-img" src="/assets/videogamephotography/03.png">
+        <img class="full-img" src="/assets/videogamephotography/04.png">
+        <img class="full-img" src="/assets/videogamephotography/05.png">
+        <img class="full-img" src="/assets/videogamephotography/06.png">
+        <img class="full-img" src="/assets/videogamephotography/07.png">
+        <img class="full-img" src="/assets/videogamephotography/08.png">
+        <img class="full-img" src="/assets/videogamephotography/09.png">
+        <img class="full-img" src="/assets/videogamephotography/10.png">
+        <img class="full-img" src="/assets/videogamephotography/11.png">
+        <img class="full-img" src="/assets/videogamephotography/12.png">
+        <img class="full-img" src="/assets/videogamephotography/13.png">
+        <img class="full-img" src="/assets/videogamephotography/14.png">
+        <img class="full-img" src="/assets/videogamephotography/15.png">
+    </div>
+
+    <script type="text/javascript" src="js/menuRedirect.js"></script>
+    <script type="text/javascript" src="js/clang.js"></script>
+    <script type="text/javascript" src="js/darkMode.js"></script>
+</body>
+
+</html>

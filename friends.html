@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Friends | ANVIL</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+</head>
+
+<body>
+    <div id="contentContainer">
+        <h1><a class="home-link" href="index.html">ANVIL</a></h1>
+        <audio id="myAudio" src="assets/clang.mp3"></audio>
+
+        <ul class="menu-content">
+            <li class="menu-item">
+                <form>
+                    <select class="menu-dropdown" onchange="redirectToPage(this)">
+                        <option value="Menu">Menu</option>
+                        <option value="index.html">&#127968;&#xFE0F;&nbsp;Home</option>
+                        <optgroup label="Work">
+                            <option value="videodirection.html">&#128249;&#xFE0F;&nbsp;Video Direction</option>
+                            <option value="analogediting.html">&#127902;&#xFE0F;&nbsp;Analog Editing</option>
+                            <option value="galleries.html">&#128444;&#xFE0F;&nbsp;Galleries</option>
+                        </optgroup>
+                        <optgroup label="Intersect">
+                            <option value="about.html">&#8265;&#xFE0F;&nbsp;About</option>
+                        </optgroup>
+                        <optgroup label="Play">
+                            <option value="youtubespa.html">&#128133;&#xFE0F;&nbsp;YouTube Spa</option>
+                            <option value="https://www.yourworldoftext.com/~ANVIL/">&#128221;&#xFE0F;&nbsp;Guestbook
+                            </option>
+                            <option value="friends.html">&#129730;&#xFE0F;&nbsp;Friends</option>
+                        </optgroup>
+                    </select>
+                </form>
+            </li>
+            <li class="menu-item"><a href="mailto:anvil.hello@gmail.com"><button class="tablinks">Email</button></a>
+            </li>
+            <li class="menu-item"><button id="toggleButton" class="tablinks menu-no-mobile">Dark mode</button></li>
+            <li class="menu-item"><button id="clang-heading" class="tablinks menu-no-mobile">&#128165;&#xFE0F;</button>
+            </li>
+        </ul>
+
+        <h3>&#129730;&#xFE0F;&nbsp;Friends&nbsp;&#129730;&#xFE0F;</h3>
+
+        <!-- Awards -->
+        <table>
+            <tr>
+                <td class="friends-img fi-evan">
+                    <img class="medal-icon" src="assets/friends/award1.png">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Evan</u></strong></a><br><br>Evan is a mystery.
+                        He
+                        has secret powers and everyone likes him. I wonder what he thinks about.</p>
+
+                    <p><i>*&nbsp;Most improved</i></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-greg">
+                    <img class="medal-icon" src="assets/friends/award2.png">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Greg</u></strong></a><br><br>Greg is my BFF. He
+                        is so
+                        creative and even very cool. He helped me program this website. I think one day he will
+                        have
+                        children.</p>
+
+                    <p><i>*&nbsp;Creative inspiration</i></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-mettro">
+                    <img class="medal-icon" src="assets/friends/award3.png">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Mettro</u></strong></a><br><br>Mettro is a very
+                        smart
+                        wine sipper. His dialogue lines are never pre-written which makes clients love him.
+                        As
+                        do i.</p>
+
+                    <p><i>*&nbsp;Friend of the month</i></p>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <br>
+
+        <!-- Others -->
+        <table>
+            <tr>
+                <td class="friends-img fi-adamh">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Adam</u></strong></a><br><br>Adam feels like
+                        drinking
+                        Pepsi while eating spicy food. What a ride. I like the way he laughs.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-adriana">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Adriana</u></strong></a><br><br>Adriana is a
+                        savvy businesswoman and World Traveller. A little fairy told me she will be the host of
+                        Complexcon 2042.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-albert">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Albert</u></strong></a><br><br>Albert loves
+                        sound.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-alex">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Alex</u></strong></a><br><br>Alex recently got
+                        in a terrible accident…. His muscles are very big, just like his smile.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-alexs">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Alex
+                                    S.</u></strong></a><br><br>Alex S. has been at sea for 48 months. Come home
+                        Alex S.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-alexei">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Alexei</u></strong></a><br><br>Alexei Morita
+                        (250k+ Tiktok) (IG deleted at 20M) (Clients include Nescafe, HotelX, Toronto Maple
+                        Leafs, Bauer..) is a very nice guy. I wish I had his hair. I wish I had his smile, but
+                        more than all that, I wish him good luck.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-alwyn">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Alwyn</u></strong></a><br><br>Alwyn has a
+                        convincing argument as to why the earth might be flat. I don't necessarily believe him,
+                        but he got me pretty close. That dude is a level 10 triller.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-andrew">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Andrew</u></strong></a><br><br>Andrew has an
+                        exceptional sound system in his car. And he knows when it’s time to start drinking. I
+                        may
+                        never understand exactly what it is that he does.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-andrewmcc">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Andrew
+                                    McC.</u></strong></a><br><br>Andrew McC lived a healthy life before
+                        accidentally signing up for basic training where he accidentally broke both of his knees
+                        in a freak accident. He is now living in retirement under constant supervision. Thank
+                        you for your service!</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-andrewmct">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Andrew
+                                    McT.</u></strong></a><br><br>Andrew McT is my childhood neighbor. Andrew McT
+                        loves roller coasters. Hey Andrew, have you ever tried Roller Coaster Tycoon? Me
+                        neither!</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-andrewr">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Andrew
+                                    R.</u></strong></a><br><br>Andrew R. fell in love with a dog one time. But
+                        now he is in love with a girl.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-annab">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Anna
+                                    B.</u></strong></a><br><br>Anna B. is an angel, a porcelain baby-skinned
+                        apparition with a heart of gold. One time she told me</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-annat">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Anna
+                                    T.</u></strong></a><br><br>Anna T. told me I could say whatever I want about
+                        her.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-austing">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Austin
+                                    G.</u></strong></a><br><br>Austin G. is the first billionaire&#8482; I ever
+                        met.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-austinm">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Austin
+                                    M.</u></strong></a><br><br>Austin Marton (not to be confused with the car
+                        brand) looks like Jesse Pinkman's girlfriend from Breaking Bad (2009), if she had a
+                        thick black mustache.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-ben">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Ben
+                                </u></strong></a><br><br>Ben J is very similar to Gru from Despicable Me
+                        (2011) He has created small nanobots that live inside the fridge in his basement. He has
+                        also created a virtual monoculture of organic material, and I am afraid his hazmat suit
+                        has a leak. He will be patient zero. Mark my words.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-benj">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Ben
+                                    J.</u></strong></a><br><br>Ben J is very similar to Gru from Despicable Me
+                        (2011) He has created small nanobots that live inside the fridge in his basement. He has
+                        also created a virtual monoculture of organic material, and I am afraid his hazmat suit
+                        has a leak. He will be patient zero. Mark my words.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-blair">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Blair</u></strong></a><br><br>Blair is the
+                        greatest chef I've ever met. I love talking to him about food, basketball and cats.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-bluetony">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Blue
+                                    Tony</u></strong></a><br><br>Blue Tony only started drinking scotch in order
+                        to prevent gagging during business deals. He is on track to becoming moderately wealthy.
+                        Not to be confused with Tony (see Tony).</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-brendan">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Brendan</u></strong></a><br><br>Brendan is the
+                        first true carnivore I've ever met. Here's his daily diet: Post-Workout Coffee (500ml)
+                        (Emulsify 1 stick melted butter) at 4AM. 34 oz T-Bone Steak. Basted in 1 stick of
+                        butter. 6PM. Sleep tight Brendan!</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-cailin">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Cailin</u></strong></a><br><br>Cailin made me
+                        the greatest cup of coffee I've ever drank. Thanks Cailin!</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-callum">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Callum</u></strong></a><br><br>Callum always
+                        wears
+                        undershirts. He loves Grand Theft Auto. I think that he is a spy. His eyes have cameras
+                        inside them. I wonder if he works out.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-carina">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Carina</u></strong></a><br><br>Carina is the
+                        catalyst to my fashion taste. In 2016, she woke me up to the world that exists outside
+                        of Walmart and Joe Fresh. I credit her for my swag. Nowadays, I shop at Walmart and Joe
+                        Fresh.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-chevron">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Chevron</u></strong></a><br><br>Chevron is a
+                        tall pike. He is a star triangle. He is a grande chai tea latte HOT. He might not know
+                        it, but it's all going downstairs...</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-chris">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Chris</u></strong></a><br><br>Chris dressed like
+                        banana boat sunscreen one day. (pictured left) He's really good at dancing.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-chuck">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Chuck</u></strong></a><br><br>Chuck McIntosh is
+                        best friends with Raf. He may come across as a little grumpy, but he means the best and
+                        wants to see the kids fly.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-clare">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Clare</u></strong></a><br><br>Clare inspires me
+                        to
+                        run, but i hate running. I think she must be happy as someone who is physically active.
+                        I
+                        think i might be too.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-colin">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Colin</u></strong></a><br><br>I've only met
+                        Colin recently, but he's a great bloke and works hard. I hope that in the next two
+                        weeks, he has at least one very nice relaxing day.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-cruz">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Cruz</u></strong></a><br><br>Cruz is way shorter
+                        than
+                        i remember, so it’s always a surprise to see her. She is a nice shiny bubble that pops
+                        when
+                        you touch it. It’s a good memory.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-damian">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Damian</u></strong></a><br><br>Damian is a
+                        former soldier, a famous actor, and a total hunk. Don't ask him how he got his "scar"...
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-dan">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Dan</u></strong></a><br><br>Dan is like an
+                        interesting rock, in that he has been cool far longer than you could imagine. Dan
+                        reminds me
+                        of mold (non-derogatory).</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-daniel">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Daniel</u></strong></a><br><br>Daniel is a
+                        global powerhouse. I like the way he laughs. I remember smoking cigarettes with Daniel
+                        in the basement of an unknown Italian family in 2018.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-danny">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Danny</u></strong></a><br><br>Danny is a man of
+                        few words, but he always put a smile on my face.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-dean">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Dean</u></strong></a><br><br>Dean is a ghost
+                        from a past life. The only evidence of his existence is through this photo. I think he
+                        yelled at me once, but I forgive him since he currently lives on the street I was born
+                        on, which is a nice coincidence.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-djson">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>DJ
+                                    Son</u></strong></a><br><br>DJ Son is an artist/producer/event DJ/and a
+                        physics student based in Ottawa Ontario Canada. Here is DJ Son's mission
+                        statement: Being a beacon of hope and give relief from the barrage of relentless
+                        negativity and anti integrity/values from the major record labels to all the ages.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-dylan">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Dylan</u></strong></a><br><br>Dylan is a
+                        handsome young lad who looks like he plays hockey. He originates from Ocean City and
+                        rides a Harley Davidson.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-dylanb">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Dylan
+                                    B.</u></strong></a><br><br>Dylan B. comes off as a total dirtbag. He really
+                        set a terrible first impression, but after a long time I realized that Dylan is actually
+                        quite an intelligent man. He has certain schemes which I cannot speak about at this
+                        time.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-dylanp">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Dylan
+                                    P.</u></strong></a><br><br>Dylan P. is a top-level redditor. I find joy and
+                        novelty in his company. If he ever gets bored with all that money, I personally invite
+                        him to spend it all on my personal interests.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-elliot">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Elliot</u></strong></a><br><br>Elliott lives in
+                        Miami now, but we forgive him since he's a kindhearted supportive mentor figure. One day
+                        I want to beat Elliott in an arm-wrestling competition.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-emanuelle">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Emmanuelle</u></strong></a><br><br>Emmanuelle is
+                        a
+                        secret agent. I’m not sure if she knows it yet. Either way, she has an eye for
+                        everything.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-et3ernalsumm3r">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Et3rnalSumm3r</u></strong></a><br><br>Et3rnalSumm3r
+                        reminded me while we met, to value my youth.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-feef">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Feef</u></strong></a><br><br>In this world there
+                        are people who are stars, and people who are rocks. Feef is a star. He is very strong
+                        and inspires me to have more control over my body. One day he will float into the sky.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-finn">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Finn</u></strong></a><br><br>Finn is a great
+                        philosopher. I think he believes in vaping and becoming a tradesperson. In 5-10 years,
+                        he will live in Alberta with his wife and two daughters. Fun Fact: He will receive a CAD
+                        $5000 moving bonus after living & working in Alberta for 12 months.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-fred">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Fred</u></strong></a><br><br>Fred is a method
+                        actor.
+                        Right now he’s playing a human being. Fred lives in Toronto. I like that part.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-gabe">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Gabe</u></strong></a><br><br>Gabe is the lord of
+                        wealth. He has a cool car, 2 motorcycles and an awesome job. He is constantly generous,
+                        compassionate, welcoming and warm. One day he will find the love of his life.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-gabriel">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Gabriel</u></strong></a><br><br>Gabriel is the
+                        youngest GOAT in Toronto. One day, I will shine his shoes.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-georgia">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Georgia</u></strong></a><br><br>Georgia would
+                        probably make great reviews for Temu or Shein.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-graham">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Graham</u></strong></a><br><br>Graham is a top G
+                        and he knows it. He has special ears that can hear things that nobody else does. He's
+                        gonna make a big car one day.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-gwen">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Gwen</u></strong></a><br><br>Gwen is
+                        suspiciously
+                        witchy, but in a good way. I think that her and Cameron brew potions while everyone is
+                        sleeping. Perhaps not even Cameron knows her secrets.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-heran">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Heran</u></strong></a><br><br>Heran is a
+                        visionary. She lives 25 years ahead of time.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-ian">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Ian</u></strong></a><br><br>Ian once told me
+                        "Never ever, under ANY circumstance, drink a cappuccino in the afternoon" I later saw
+                        him drinking a cappuccino at 15:30. He denies it to this day. Next time you go to
+                        Thailand Ian PLEASE bring us back Chang Beer&#8482; hats. I want to steal your swag.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-ingrid">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Ingrid</u></strong></a><br><br>Ingrid is a part
+                        of the circus.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-jack">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Jack</u></strong></a><br><br>Jack is a million
+                        dollar
+                        man. I think he’s never smelled bad once. He would flirt with a wall if it could talk
+                        back.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-jacob">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Jacob</u></strong></a><br><br>Jacob Phair is a
+                        bundle of love and joy. He has a special knack for recommending good nickelback songs.
+                        One day Jacob will scare us.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-jake">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Jake</u></strong></a><br><br>Jake Norman gave up
+                        on his life when he abandoned his 600-episode-long TV series which he had been actively
+                        writing for several years. Now he works as a casting producer for Canada's Got Talent.
+                        One day Jake will run over someone with his car.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-jaylen">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Jaylen</u></strong></a><br><br>Jaylen loves milk
+                        and the Pittsburgh Penguins.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-jeremyad">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Jeremy
+                                    AD</u></strong></a><br><br>Jeremy AD recently grew a moustache. He is very
+                        handsome now! Thanks Jeremy!
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-jill">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Jill</u></strong></a><br><br>Jill is like a nice
+                        big
+                        smile. I think she knows a thing or two about the world’s secrets. Like a warm cup of
+                        tea.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-joey">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Joey</u></strong></a><br><br>Joey is like a big
+                        dog who thinks he's a small dog. He will hide behind a small tree thinking you won't see
+                        him.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-jono">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Jono</u></strong></a><br><br>Jono is a vampire.
+                        His bedroom is really cool because it's so dark and moody but also covered in beautiful
+                        flowers. He has a very powerful flashlight and a back massager. He inspires everyone
+                        around him to smoke weed and drink red bull. Jono has nice nails.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-josh">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Josh</u></strong></a><br><br>Josh is a silly
+                        little
+                        trickster. He has a sneaky smile and a good creative soul. One day i think he will have
+                        a
+                        nice car.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-jp">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>JP</u></strong></a><br><br>JohnPaul Mario (JP)
+                        is a lover, a critic, a knower, and a hater. He has grand ideas, and small issues, but
+                        overall he is my friend. He teaches everyone around him a cool thing or two that makes
+                        the world feel a little more interesting. If you ever see him on the street, tell him:
+                        "F*ck off Geezer".
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-thejoker">
+                </td>
+                <td style="min-width:175px;">
+
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>The
+                                    Joker</u></strong></a><br><br>The Joker is JP's alter ego. One day JP will
+                        be driven insane and turn to a life of crime and chaos in Gotham City while becoming an
+                        infamous psychopathic crime figure.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-kaela">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Kaela</u></strong></a><br><br>Kaela was a nice
+                        person, she always tried to make things right.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-karensa">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Karensa</u></strong></a><br><br>Karensa is my
+                        favourite tornado. She shows me new colours and i like that.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-katieb">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Katie
+                                    B.</u></strong></a><br><br>Katie B. is the greatest darts player I've ever
+                        met. Last time i faced her, I lost a $3000 dollar wager. I'll get you next time Katie...
+                        grr...</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-katies">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Katie
+                                    S.</u></strong></a><br><br>Katie S. reminds me a lot of garfield. That may
+                        seem like an insult, but it's actually a glowing compliment. I also think that her
+                        dedication to solving geopolitical tensions in southern Ontario™ is admirable.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-kahma">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Kahma</u></strong></a><br><br>Kahma is a pure
+                        soul.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-kevin">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Kevin</u></strong></a><br><br>Kevin Pavlov is
+                        physically in Ottawa, Ontario, but his heart and soul are in the prairies. He knows how
+                        to play the guitar. I love the way his singing voice has changed over the years.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-kinkade">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Kinkade</u></strong></a><br><br>Kinkade is an
+                        angel.
+                        I think he will live forever. His smile is contagious.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-kian">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Kian</u></strong></a><br><br>Kian loves cigars, his
+                        vineyard, and his Mercedes Benz&#8482;.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-kiyan">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Kiyan</u></strong></a><br><br>Kiyan doesn’t like
+                        to
+                        talk after he takes edibles, but that’s okay because we already know he is very smart.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-chrisfromwhites">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Kris From
+                                    White's</u></strong></a><br><br>Kris from White's is a legendary man. He is
+                        always so chill and nice. Whenever I see him he always daps me up. I love that guy sm
+                        man.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-krish">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Krish</u></strong></a><br><br>Krish got his
+                        motorcycle stolen recently, but then he got it back.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-kylec">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Kyle
+                                    C.</u></strong></a><br><br>Never cross this man. If he wants to talk smack about
+                        someone with you, he will approach you and say "So... what do you think about that
+                        person?".
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-kyleh">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Kyle
+                                    H.</u></strong></a><br><br>Kyle H. has been missing from the function for like
+                        4.5 years but that doesnt mean I don't fw him heavy. Keep skating and crushing "bowls".
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-lucy">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Lucy</u></strong></a><br><br>Lucy used to own a Sony
+                        a7iii, but after a few years she realized that cameras don't matter. What really matters
+                        is being nice, being welcoming, sharing ideas, and having fun! Lucy looks like she can
+                        see ghosts.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-mackenzie">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Mackenzie
+                                </u></strong></a><br><br>Mackenzie is like an old acoustic guitar. He always
+                        smells good and earthy and always has a nice song to sing. One day I will go to his
+                        house</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-mariella">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Mariella
+                                </u></strong></a><br><br>Mariella has very long hair. It reminds me of a
+                        waterfall. I like her take on life: "It's better to be lucky than to be good".</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-mark">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Mark
+                                </u></strong></a><br><br>Mark has been hiding in a cave on the southwest side of
+                        the Scarborough Bluffs for a while now. He has an evergreen sort of bliss to him. If
+                        Mark was ever in the same room as Kinkade, I think the world would explode.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-mattc">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Matt
+                                    C.</u></strong></a><br><br>Matt C. is a very crazy boy. I think he knows
+                        that
+                        too. If the game of life was set to easy mode, he’d be your first BFF.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-matth">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Matt
+                                    H.</u></strong></a><br><br>Matt H. is a very safe driver. He also likes
+                        Pokemon.
+                        I think that’s awesome.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-mattl">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Matt
+                                    L.</u></strong></a><br><br>Matt Leiper (More commonly known as Marcel
+                        Laurent) is famously known for becoming voluntarily homeless on the coast of France in
+                        2023. He spent over 3 weeks on the streets, building a cult following day after day of
+                        performing amazing reggae music on the beach. On the third day Marcel was ravaged by a
+                        famous spider, leaving him covered in bites and scars. He may or may not have developed
+                        powers after "IT" happened…
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-megan">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Megan</u></strong></a><br><br>Megan is a
+                        prototype for the next generation of Epic Society. She loves her Bape&#8482; sweater and
+                        always finds time to smoke a tasty cigarette. One day I will pay her for the amazing art
+                        she makes.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-mei">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Mei</u></strong></a><br><br>Mei is an enigma. I
+                        think
+                        she must be a DLC character. She always appears in random cutscenes. Her paintings are
+                        cool.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-meredith">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Meredith</u></strong></a><br><br>Meredith is an
+                        important figure, she is the matriarch. I learn a lot when she’s around.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-michael">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Michael</u></strong></a><br><br>Michael is a very
+                        smart person. I admire his intellect and judo skills. One day he will have a nice
+                        backyard.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-nickd">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Nick
+                                    D.</u></strong></a><br><br>Nick D. is a total trainwreck. He has no swag, no
+                        balls, no life, no wife, no kids, no fruits of labour. But God damn he's so damn hot in
+                        this photo… and hey, you know what he said one time? "I just work here" ;)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-nicks">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Nick
+                                    S.</u></strong></a><br><br>Nick loves comic books, spaghetti, and B&W
+                        movies. He is ashamed of his Scottish heritage, and claims to be Italian when amongst
+                        strangers.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-od">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>OD</u></strong></a><br><br>OD
+                        will change the
+                        world for the better. She gives excellent advice.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-oliver">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Oliver</u></strong></a><br><br>Oliver is a S tier
+                        guy. He loves nerf guns and pumping iron. One day he will have a lovely family and a
+                        large backyard.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-oylein">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Oy
+                                    Lein</u></strong></a><br><br>Oy Lein is a featherweight socialite with no
+                        taste for alcohol or music. She mainly spends her time inside researching seed variants
+                        (mainly native to northern Mexico).
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-p">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>P</u></strong></a><br><br>P
+                        is a former student
+                        of Virgil Abloh. One day she will be on the TIME's magazine list of 100 most influential
+                        figures.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-paolo">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Paolo</u></strong></a><br><br>Paolo is the
+                        reincarnation of Jesus Christ&#8482;.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-pctheinfamous">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>PCtheInfamous</u></strong></a><br><br>PCtheInfamous
+                        is an aspiring rapper and fashion designer. He makes custom apparel using upcycled
+                        materials, with a punk/grunge/distressed feel. Most of his pieces are completely
+                        handmade, and often incorporate inspiration from the music he listens to, as well as the
+                        feelings he absorbs from living in Montreal (especially during the winter).
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-pettyputa">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>PettyPuta</u></strong></a><br><br>PettyPuta is a
+                        strong supporter of the arts (specifically our art). It is often speculated that her
+                        joint rolling skills were unmatched at their peak in 2019.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-polaroidkev">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Polaroid
+                                    Kev</u></strong></a><br><br>Polaroid Kev (K-Rod) is the all-time greatest
+                        GOAT of all time. When T-Pain had the opportunity to meet K-Rod, they bonded instantly.
+                        Unfortunately, T-Pain got mad when K-Rod parked the Chevrolet™ Suburban™ on the wrong
+                        side of the lake, famously forcing T-Pain to walk almost 300m.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-polly">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Polly</u></strong></a><br><br>Polly and Blue Tony
+                        recently had a falling out, but ironically, it was not her fault this time. See, Blue
+                        Tony was caught using her car for "business purposes" last month and it's safe to say
+                        she was NOT happy. Well surprise surprise, yesterday she caught Blue Tony AGAIN but this
+                        time he was in MIAMI!!!
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-prudence">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Prudence</u></strong></a><br><br>Prudence used to
+                        be my wife. We had a gut-wrenching divorce. We are friends now.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-raf">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Raf</u></strong></a><br><br>Raf
+                        is best friends
+                        with a man named Chuck. Oftentimes he smiles and nods, but I can't tell if he means it.
+                        I think Raf would really enjoy camping.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-randy">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Randy</u></strong></a><br><br>Randy.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-roman">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Roman</u></strong></a><br><br>Roman is a beam of
+                        sunlight through a nice old glass window. He has such wonder in his eyes, but I wonder
+                        if he ever feels lonely. At least he has God with him.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-ryanw">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Ryan
+                                    W.</u></strong></a><br><br>Ryan Wazik is a freak man, like a total freak. He
+                        showed me some awesome russian wrestling videos that took him 5 months to torrent. I
+                        love this guy. Ryan, if you're reading this, it's too late.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-sabina">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Sabina</u></strong></a><br><br>Sabina is a
+                        superfood.
+                        She can clean her house while hungover. I find that very impressive.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-sahan">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Sahan</u></strong></a><br><br>Sahan works at a
+                        Nuclear Power Plant And Loves Fencing. I am grateful that he continues to invite me to
+                        the annual Christmas Party. I remain bashful that I could not make it in 2018.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-sam">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Sam</u></strong></a><br><br>Sam
+                        is such a classy
+                        guy.
+                        He wouldn’t hurt a fly unless it was being annoying. Sam reminds me of Backwoods and
+                        808’s.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-santiago">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Santiago</u></strong></a><br><br>Santiago is so
+                        colourful. If you gave him a pair of shoes for every pair of shoes he has, he would have
+                        at least 120 pairs of shoes. He has a nice smile.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-scottr">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Scott
+                                    R.</u></strong></a><br><br>Scott R. loves three things: Cats, Candy, and his
+                        swim spa.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-scotts">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Scott
+                                    S.</u></strong></a><br><br>Scott S is amazing. He is a loving father of
+                        three boys, and is commonly referred to as the greatest British actor of all time. His
+                        role as Poncious Pilot in the soon-to-be cult classic "PERCOCET JESUS" made waves on the
+                        IMDB homepage in mid-2025.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-shane">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Shane</u></strong></a><br><br>Shane is very very
+                        cool. He loves camo hats and wears a nice moustache.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-shari">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style="font-size:24px;"><strong><u>Shari</u></strong></a><br><br>Shari hates my
+                        overuse of emojis. Shari I'm sorry, I can't help myself, I love emojis.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-sofiacidesinger">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style="font-size:24px;"><strong><u>Sofiacide
+                                    Singer</u></strong></a><br><br>I can't remember this guy's name for the life
+                        of me… but he is so sweet and a great singer!
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-spooky">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Spooky</u></strong></a><br><br>Spooky always
+                        eats
+                        toothpicks, i wonder if he has ever swallowed one by accident. Either way, i think he
+                        will
+                        go far in life. And i like the shape of his head.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-stephen">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Stephen</u></strong></a><br><br>Stephen is very
+                        special. He reminds me of a bag of Lays Original Chips. He is sneakily very good.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-sydney">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Sydney</u></strong></a><br><br>Sydney always
+                        knows
+                        where the vape is, even if she won’t admit it. I admire her swagger.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-tam">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Tam</u></strong></a><br><br>Tam loves
+                        squishmellows and has anger issues. I think she will be a happy wife to Krish. We bonded
+                        over our shared love of The Minions&#8482;.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-tech">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Tech</u></strong></a><br><br>Tech said something
+                        very important to me one time. He looked me in the eyes and clenched his teeth.
+                        "stillworking" He muttered. Tech is genuinely one of the kindest people you'll see in
+                        Toronto. He will remember your face and show you love no matter how long it's been.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-tess">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Tess</u></strong></a><br><br>Tess is like a
+                        passport. If you lose her, you're screwed.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-thomasa">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Thomas
+                                    A.</u></strong></a><br><br>Thomas Allan is a forever student. He currently
+                        holds three bachelor's, two master's, and a doctorate in chess theory. After a brief
+                        hiatus, he will invent the small sky theory.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-thomasv">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Thomas
+                                    V.</u></strong></a><br><br>Thomas Varghese is a global traveller, music fan,
+                        amateur photographer, certified leadership coach, and textile mogul. His instagram
+                        presence is genuinely inspiring to western youth, mainly through his portrayal of living
+                        an honest and loving life. His retirement was a massive hit to the textile industry, but
+                        those he coached will carry his torch into the dark.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-vanessa">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Vanessa</u></strong></a><br><br>Vanessa loves
+                        calico critters. I think if she ever got dementia, she would definitely spend all of her
+                        money on calico critters.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-vrish">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Vrish</u></strong></a><br><br>Vrish has one of
+                        my favourite laughs. You can tell he really means it. His party trick is to fall down a
+                        full set of stairs without injuring himself. It's quite impressive, really.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-wendy">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Wendy</u></strong></a><br><br>Wendy is my idol.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-willc">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Will
+                                    C.</u></strong></a><br><br>Will C. was like a father to me. Losing him was
+                        one of the toughest things I've endured. I hope the trip to Greece was worth it...</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-willw">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a style=" font-size:24px;"><strong><u>Will
+                                    W.</u></strong></a><br><br>Will Wang, I miss you! How have you been?</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-william">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>William</u></strong></a><br><br>William Leathers
+                        is the most talented musician I know. He can play the Piano and the Trumpet at the same
+                        time. William has shown me nothing but kindness in my years as his friend. I hope that
+                        William</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-xylk">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Xylk</u></strong></a><br><br>Xylk is a rockstar,
+                        the type who likes to be very sneaky and serious but deep down is so warm and loving. He
+                        has a childlike wonder which makes him special.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-yerb">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Yerb</u></strong></a><br><br>Yerb loves Tim
+                        Hortons&#8482; Peach Iced Tea.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-yern">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Yern</u></strong></a><br><br>Yern loves Tim
+                        Hortons&#8482; Peach Iced Tea.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="friends-img fi-zellers">
+                </td>
+                <td style="min-width:175px;">
+                    <p style="position: relative;"><a
+                            style=" font-size:24px;"><strong><u>Zellers</u></strong></a><br><br>Zellers is the
+                        strongest man I know. One day he will save the life of an innocent child involved in the
+                        car crash caused by Jake Norman.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    </div>
+
+    <script type="text/javascript" src="js/menuRedirect.js"></script>
+    <script type="text/javascript" src="js/clang.js"></script>
+    <script type="text/javascript" src="js/darkMode.js"></script>
+</body>
+
+</html>

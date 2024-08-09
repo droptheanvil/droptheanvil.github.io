@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Meme Archive | ANVIL</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+</head>
+
+<body>
+    <div id="contentContainer">
+        <h1><a class="home-link" href="index.html">ANVIL</a></h1>
+        <audio id="myAudio" src="assets/clang.mp3"></audio>
+
+        <ul class="menu-content">
+            <li class="menu-item">
+                <form>
+                    <select class="menu-dropdown" onchange="redirectToPage(this)">
+                        <option value="Menu">Menu</option>
+                        <option value="index.html">&#127968;&#xFE0F;&nbsp;Home</option>
+                        <optgroup label="Work">
+                            <option value="videodirection.html">&#128249;&#xFE0F;&nbsp;Video Direction</option>
+                            <option value="analogediting.html">&#127902;&#xFE0F;&nbsp;Analog Editing</option>
+                            <option value="galleries.html">&#128444;&#xFE0F;&nbsp;Galleries</option>
+                        </optgroup>
+                        <optgroup label="Intersect">
+                            <option value="about.html">&#8265;&#xFE0F;&nbsp;About</option>
+                        </optgroup>
+                        <optgroup label="Play">
+                            <option value="youtubespa.html">&#128133;&#xFE0F;&nbsp;YouTube Spa</option>
+                            <option value="https://www.yourworldoftext.com/~ANVIL/">&#128221;&#xFE0F;&nbsp;Guestbook
+                            </option>
+                            <option value="friends.html">&#129730;&#xFE0F;&nbsp;Friends</option>
+                        </optgroup>
+                    </select>
+                </form>
+            </li>
+            <li class="menu-item"><a href="mailto:anvil.hello@gmail.com"><button class="tablinks">Email</button></a>
+            </li>
+            <li class="menu-item"><button id="toggleButton" class="tablinks menu-no-mobile">Dark mode</button></li>
+            <li class="menu-item"><button id="clang-heading" class="tablinks menu-no-mobile">&#128165;&#xFE0F;</button>
+            </li>
+        </ul>
+
+        <h3>&#128444;&#xFE0F;&nbsp;Meme&nbsp;Archive&nbsp;&#128444;&#xFE0F;</h3>
+        <p style="margin-top:-20px">Meme Archive seeks to capture where mass internet culture intersects niche
+            experience. It invites internet culture, which is both fleeting and permanent, to invoke a sense of
+            nostalgia and community through shared memories and experiences online.</p>
+
+        <br>
+
+        <img class="full-img" src="/assets/memearchive/memearchive.png">
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/01.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/02.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/03.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/04.png">
+            </div>
+        </div>
+
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/05.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/06.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/07.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/08.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/09.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/10.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/11.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/12.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/13.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/14.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/15.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/16.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/17.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/18.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/19.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/20.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/21.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/22.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/23.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/24.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/25.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/26.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/27.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/28.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/29.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/30.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/31.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/32.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/33.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/34.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/35.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/36.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/37.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/38.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/39.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/40.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/41.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/42.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/43.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/44.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/45.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/46.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/47.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/48.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/49.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/50.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/51.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/52.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/53.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/54.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/55.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/56.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/57.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/58.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/59.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/60.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/61.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/62.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/63.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/64.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/65.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/66.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/67.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/68.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/69.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/70.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/71.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/72.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/73.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/74.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/75.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/76.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/77.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/78.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/79.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/80.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/81.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/82.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/83.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/84.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/85.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/86.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/87.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/88.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/89.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/90.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/91.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/92.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/93.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/94.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/95.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/96.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/97.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/98.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/99.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/100.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/101.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/102.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/103.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/104.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/105.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/106.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/107.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/108.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/109.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/110.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/111.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/112.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/113.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/114.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/115.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/116.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/117.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/118.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/119.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/120.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/121.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/122.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/123.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/124.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/125.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/126.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/127.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/128.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/129.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/130.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/131.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/140.png">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="assets/memearchive/141.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/142.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/143.png">
+            </div>
+
+            <div class="grid-item">
+                <img src="assets/memearchive/144.png">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/menuRedirect.js"></script>
+    <script type="text/javascript" src="js/clang.js"></script>
+    <script type="text/javascript" src="js/darkMode.js"></script>
+</body>
+
+</html>

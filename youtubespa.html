@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>YouTube Spa | ANVIL</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <style>
+        .bubble {
+            position: fixed;
+            bottom: -64px;
+            opacity: 0;
+            animation: floatUp 10s linear forwards;
+            cursor: pointer;
+        }
+
+        @keyframes floatUp {
+            0% {
+                bottom: -64px;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                bottom: 100vh;
+                opacity: 0;
+            }
+        }
+
+        .bang {
+            font-size: 64px;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            animation: disappear 0.5s linear forwards;
+        }
+
+        @keyframes disappear {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body style="user-select: none;">
+    <div id="contentContainer">
+        <h1><a class="home-link" href="index.html">ANVIL</a></h1>
+        <audio id="myAudio" src="assets/clang.mp3"></audio>
+
+        <ul class="menu-content">
+            <li class="menu-item">
+                <form>
+                    <select class="menu-dropdown" onchange="redirectToPage(this)">
+                        <option value="Menu">Menu</option>
+                        <option value="index.html">&#127968;&#xFE0F;&nbsp;Home</option>
+                        <optgroup label="Work">
+                            <option value="videodirection.html">&#128249;&#xFE0F;&nbsp;Video Direction</option>
+                            <option value="analogediting.html">&#127902;&#xFE0F;&nbsp;Analog Editing</option>
+                            <option value="galleries.html">&#128444;&#xFE0F;&nbsp;Galleries</option>
+                        </optgroup>
+                        <optgroup label="Intersect">
+                            <option value="about.html">&#8265;&#xFE0F;&nbsp;About</option>
+                        </optgroup>
+                        <optgroup label="Play">
+                            <option value="youtubespa.html">&#128133;&#xFE0F;&nbsp;YouTube Spa</option>
+                            <option value="https://www.yourworldoftext.com/~ANVIL/">&#128221;&#xFE0F;&nbsp;Guestbook
+                            </option>
+                            <option value="friends.html">&#129730;&#xFE0F;&nbsp;Friends</option>
+                        </optgroup>
+                    </select>
+                </form>
+            </li>
+            <li class="menu-item"><a href="mailto:anvil.hello@gmail.com"><button class="tablinks">Email</button></a>
+            </li>
+            <li class="menu-item"><button id="toggleButton" class="tablinks menu-no-mobile">Dark mode</button></li>
+            <li class="menu-item"><button id="clang-heading" class="tablinks menu-no-mobile">&#128165;&#xFE0F;</button>
+            </li>
+        </ul>
+
+        <h3>&#128133;&#xFE0F;&nbsp;YouTube&nbsp;Spa&nbsp;&#128133;&#xFE0F;</h3>
+
+        <iframe class="responsive-iframe" id="youtubePlayer" width="750" height="422" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+
+        <p style="text-align: center;"><a href="#" class="link" id="newVideoLink">Click here for a new video.</a></p>
+    </div>
+
+    <script type="text/javascript" src="js/menuRedirect.js"></script>
+    <script type="text/javascript" src="js/clang.js"></script>
+    <script type="text/javascript" src="js/darkMode.js"></script>
+    <script>
+        // Random video
+        document.addEventListener('DOMContentLoaded', function () {
+            const youtubeLinks = [
+                "https://www.youtube.com/embed/-42Z-_Kq0QU?si=bnF0Hwf5c5TMzxop",
+                "https://www.youtube.com/embed/pA44HuxQsUc?si=mkCAsUyooE1wE7G9",
+                "https://www.youtube.com/embed/MqiVTcpUvho?si=uE75TjVW0TD176Ba",
+                "https://www.youtube.com/embed/XIKFkuz-1no?si=Ar5Sm8msOv7hCn0p",
+                "https://www.youtube.com/embed/HbpjWtgzewU?si=_JsIdrrXacifRTpD",
+                "https://www.youtube.com/embed/FVoyIhrxepk?si=kYFQCWFB2vUNf8qy",
+                "https://www.youtube.com/embed/-jdBRk3_978?si=SVYgTZZbha3KUwwi",
+                "https://www.youtube.com/embed/MgXVbuuGPcA?si=iwu1LKHh_RY1hkpB",
+                "https://www.youtube.com/embed/bwN5PITkd74?si=3FM7_NhgNxh_zNEg",
+                "https://www.youtube.com/embed/cuNM3s0r7Zc?si=WGkNXthBzI1nXkKq",
+                "https://www.youtube.com/embed/B7ThIWxZRyo?si=0aN8hjxun7aPnM-0",
+                "https://www.youtube.com/embed/UBOLme4rf9o?si=xWvOkUldAQB8AAuP",
+                "https://www.youtube.com/embed/TmCGVDgyz5Q?si=q2GSSgpnSlkPu_lm",
+                "https://www.youtube.com/embed/nM1giBebKeo?si=ewONIj5U1tuT5jql",
+                "https://www.youtube.com/embed/VAdMkf-AAPM?si=CA0SR77ejKL_CRm9",
+                "https://www.youtube.com/embed/piT_tJIBaZM?si=mPzhrC4hZDgbn4k9",
+                "https://www.youtube.com/embed/VkGpuEHym8A?si=dDuWxzsYfGMwLJmY",
+                "https://www.youtube.com/embed/udAL48P5NJU?si=O6pd_Dw3P6teShuv",
+                "https://www.youtube.com/embed/nh8sQHkZq-s?si=1laJBgLcZLGFC6JW",
+                "https://www.youtube.com/embed/DakcZvKS780?si=wcO265-shXgV4XBa",
+                "https://www.youtube.com/embed/K_CbgLpvH9E?si=eGlH6C14HUrpp7KZ",
+                "https://www.youtube.com/embed/iogcY_4xGjo?si=patXBNn3apzjNqF-",
+                "https://www.youtube.com/embed/3ryID_SwU5E?si=3OX5OxPnepqPW-QX",
+                "https://www.youtube.com/embed/1WEAJ-DFkHE?si=G3xBNBmL_gILy3FX",
+                "https://www.youtube.com/embed/FM7Z-Xq8Drc?si=ICVjQDHieLPrps7y",
+                "https://www.youtube.com/embed/tVWWp1PqDus?si=h4S4b9ZdNMamiakM",
+                "https://www.youtube.com/embed/cExLQ1o2pDw?si=Bd09PU4ACYiBAKWj",
+                "https://www.youtube.com/embed/tnMcjBqTVzQ?si=QpRW-mwDEWUT-te1",
+                "https://www.youtube.com/embed/D_nFJm628L0?si=g5fOXxVj9Zz057l_",
+                "https://www.youtube.com/embed/MTUPKSz0hMo?si=w9j3JATTQt6iurJI",
+                "https://www.youtube.com/embed/AdMzX2ZSqw8?si=UhB_9RmYMQCdbjws",
+                "https://www.youtube.com/embed/_85rSfnzhyQ?si=_OIN88qMEXDSzkLl",
+                "https://www.youtube.com/embed/L00ZCW8xyZc?si=075ZPyQIQOM6pPUD",
+                "https://www.youtube.com/embed/UuW0jkV4M7o?si=4hnW8DPz-fTzhirL",
+                "https://www.youtube.com/embed/i0xTDisB7eE?si=54crv7NiHKY4dGLs",
+                "https://www.youtube.com/embed/FqcWiu1MRzk?si=LI4b1b2CZMtnG1VD",
+                "https://www.youtube.com/embed/GuPZ-aBa0fw?si=ni2_aCq8MwuKmT9b",
+                "https://www.youtube.com/embed/r9bRMoK2hAg?si=Cymp13zKhjx5mPCx",
+                "https://www.youtube.com/embed/jAjhn6UzQqc?si=Xibu-rW5eXlDPdXZ",
+                "https://www.youtube.com/embed/hZ4X-fGmabU?si=IpFwgD1EDiym7gEM",
+                "https://www.youtube.com/embed/-Hu_99RVi6w?si=_LRE_EyDGDVsIBt2",
+                "https://www.youtube.com/embed/lkAi8JDrYy8?si=aF3V6DeEl4i7SF4c",
+                "https://www.youtube.com/embed/kPMukCklDQc?si=cYpvzQGKmwt6y-wp",
+                "https://www.youtube.com/embed/zdokPVKN-40?si=7YVzL6UARw_cZ3_g",
+                "https://www.youtube.com/embed/HAzZH6wccew?si=ZxKIXRgjTsiBa0Y1",
+                "https://www.youtube.com/embed/3rDjPLvOShM?si=AOtRx-A0_nTNAO-E",
+                "https://www.youtube.com/embed/OQNfl4O40wI?si=kt8yB2EqfrL7lV2b",
+                "https://www.youtube.com/embed/WCjLd7QAJq8?si=-ofh7ytc-iQmZxev",
+                "https://www.youtube.com/embed/zomZywCAPTA?si=AksurmDkUvBAf4ZD",
+                "https://www.youtube.com/embed/nDq6TstdEi8?si=iKzpueSbqv-mlX4T",
+                "https://www.youtube.com/embed/ip6Vn24FwBk?si=4-9xJKfkhDim3InF",
+                "https://www.youtube.com/embed/ZOcUIbQxepo?si=q-sIthbyLFmBz5AT",
+                "https://www.youtube.com/embed/FALlhXl6CmA?si=onAi7fVuM59I9_pJ",
+                "https://www.youtube.com/embed/cPrZDH6ZaC4?si=uyOFhqRIRyPTToOJ",
+                "https://www.youtube.com/embed/wN-f63JJTpc?si=YExQWA_tIfd5qSRH",
+                "https://www.youtube.com/embed/wN-f63JJTpc?si=YExQWA_tIfd5qSRH",
+                "https://www.youtube.com/embed/2H0RL0qLjpQ?si=-oOhBOTiPnahQdrP",
+                "https://www.youtube.com/embed/_Dpd5a6Ac-E?si=0NePZBVq2BUpMsmO",
+                "https://www.youtube.com/embed/aK4JSwhdcdE?si=en5rgTIKWGgUr_0E",
+                "https://www.youtube.com/embed/NRPLSwqgHQw?si=eKcnuxJ5FQ_e4TPn",
+                "https://www.youtube.com/embed/rWEI9y6PElo?si=ohyslfHoQqqoE3Cn",
+                "https://www.youtube.com/embed/g1QR0RO1pbw?si=o-KuaFxPQ8nLesQw",
+                "https://www.youtube.com/embed/UvUA6-P8ZT4?si=4c8mYn929_P5liUE",
+                "https://www.youtube.com/embed/C3urx0-M464?si=tWriUtdHVHw7tvLd",
+                "https://www.youtube.com/embed/OQNfl4O40wI?si=xEWvAjEf3T5yuxYL",
+                "https://www.youtube.com/embed/OQNfl4O40wI?si=xEWvAjEf3T5yuxYL",
+                "https://www.youtube.com/embed/H5NZtbbiyKM?si=pzCfmDikV2qhZ2M4",
+                "https://www.youtube.com/embed/udAL48P5NJU?si=DBUhSHEyotJaY0q0",
+                "https://www.youtube.com/embed/VkGpuEHym8A?si=k5OJ7innyuOIWnPA",
+                "https://www.youtube.com/embed/Ofp26_oc4CA?si=yjHZJ7sMthcgIllk",
+                "https://www.youtube.com/embed/ADfQ3QOLacc?si=Rw05tkTiTzGXm_jZ",
+                "https://www.youtube.com/embed/JuBbeFafcqo?si=plHLOztcpFCKq5fL",
+                "https://www.youtube.com/embed/pA44HuxQsUc?si=Co8I3J1PitI9hpVx",
+                "https://www.youtube.com/embed/RYbe-35_BaA?si=mlfpKnzHLHcjub2g",
+                "https://www.youtube.com/embed/lX6JcybgDFo?si=Xzwcfy0g6M6L-tZS",
+                "https://www.youtube.com/embed/YOJsKatW-Ts?si=VCjQRsuj_rLaREsu",
+                "https://www.youtube.com/embed/LiKCzeqn-kg?si=SnYxHUWuhsosoY6o",
+                "https://www.youtube.com/embed/VAdMkf-AAPM?si=UKCT2I8pl2UEnja9",
+                "https://www.youtube.com/embed/pw5ETGiiBRg?si=M_HdyPflHcG4897Y",
+                "https://www.youtube.com/embed/uO8SeXh_LaA?si=SuK0DCkMMrYt87ew",
+                "https://www.youtube.com/embed/P5RvvcaQEIs?si=Q8RYEFNDKCfa4iDx",
+                "https://www.youtube.com/embed/2GgiZZhO-PA?si=lcXJQVQ4bOJV9G1z",
+                "https://www.youtube.com/embed/xTfWF9S8BCY?si=VWSNOnPPbNMOKV3m",
+                "https://www.youtube.com/embed/s1TsnnqgkoY?si=gQy9IvLimm9cP5yc",
+                "https://www.youtube.com/embed/FBgLytbB-uE?si=-32p0Ogdq9ZSWjxu",
+                "https://www.youtube.com/embed/rfqcxSzs_9U?si=iiuhvxEQiAfdcDyn",
+                "https://www.youtube.com/embed/FxlUfPvh6DA?si=gIdMf8eX3MqYOC92",
+                "https://www.youtube.com/embed/Efw7ibf45ws?si=axU9zpbicww49a9X",
+                "https://www.youtube.com/embed/HbpjWtgzewU?si=6XT8EAmhRWkgcSSK",
+                "https://www.youtube.com/embed/ICivMiNuato?si=zsLthfqbLR6hjGjQ",
+                "https://www.youtube.com/embed/ICivMiNuato?si=wW-OnKvkbr3D_VUu",
+                "https://www.youtube.com/embed/j0K2t0czqrg?si=f432fwNbZ4fTTDjV",
+                "https://www.youtube.com/embed/41MWfJ8q-wk?si=WzxkObY5GHyPC8fz",
+                "https://www.youtube.com/embed/959dVc30_Ik?si=ZnfFbn7wDbucys3l",
+                "https://www.youtube.com/embed/VMbfe8IZOMk?si=WjCzthRLGyk6EBd4",
+                "https://www.youtube.com/embed/DgTM5WNnMVs?si=hosGfQ8xvk05NFF6",
+                "https://www.youtube.com/embed/6eP0Y70Oisk?si=yxNYQ1NS1NhGj7eU",
+                "https://www.youtube.com/embed/SX6Ga78igjY?si=u6YxQF8vuHxyOtE7",
+                "https://www.youtube.com/embed/3kj8dqQnvic?si=MnPx0ly3Na1o91So",
+                "https://www.youtube.com/embed/6eQOHUuukrs?si=O5AstP85QIPGmguZ",
+                "https://www.youtube.com/embed/NCDuuP73_qY?si=MQ_XyECCHULJ5R6F",
+                "https://www.youtube.com/embed/BIg0yhqPLBA?si=x4p39_3cFKPej1PN",
+                "https://www.youtube.com/embed/McPIxh1p6f4?si=Vk7hjJQ-9_5Gb-P4",
+                "https://www.youtube.com/embed/XIKFkuz-1no?si=MSAgrkOdkDq1Ddud",
+                "https://www.youtube.com/embed/2erqomGwfTI?si=ETz1D77yuNO_ODGv",
+                "https://www.youtube.com/embed/NoXcCveo92Y?si=Y4c95WXI8KLfKTRq",
+                "https://www.youtube.com/embed/x7ohCJ6uK9c?si=V6Cxgbwtij8_VW0a",
+                "https://www.youtube.com/embed/hvYraDdumzg?si=CsyPwN8K5PztQxG2",
+                "https://www.youtube.com/embed/avGUXxnqAso?si=obRhlZky3HZF5Xa-",
+                "https://www.youtube.com/embed/EwRgYgC013o?si=gTqHdpFH5YlbyMA2",
+                "https://www.youtube.com/embed/MfNP81Mr7Js?si=aR2zTgN4dYurn8PS",
+                "https://www.youtube.com/embed/phxJRJFKcrk?si=QZdnJbDs1Yl8oqve",
+                "https://www.youtube.com/embed/VlA_kAqVxHg?si=bU1vEvaxLOBga8pN",
+                "https://www.youtube.com/embed/MKXp6AdMoJ0?si=fA1aKDbf9oEKjJxr",
+                "https://www.youtube.com/embed/cXOBakEos0c?si=PZUmbeTkfmojCNdM",
+                "https://www.youtube.com/embed/QabOws88zD4?si=88gwvFm8hp3Ne4rs",
+                "https://www.youtube.com/embed/3ygdkYjkbfA?si=IFoS66ugMcfrBj6-",
+                "https://www.youtube.com/embed/Wkv5WT04QUk?si=RinJcTQkuxO6kL8v",
+                "https://www.youtube.com/embed/j14nvAgkc5Q?si=lq8yQIoHeWW5Z3Qm",
+                "https://www.youtube.com/embed/NsTFRhLL0Qg?si=u9XTj4UeiduaWJ17",
+                "https://www.youtube.com/embed/cuYIxUdcS3g?si=ofvmrtGkr4bmd9oG",
+                "https://www.youtube.com/embed/kHQnlhHHtZc?si=aNVsILsOJQFQb0O7",
+                "https://www.youtube.com/embed/kbN1wh5slnA?si=-ZfWeUlM0QSLMT6W",
+                "https://www.youtube.com/embed/Li4j82QbBvk?si=YE2OhTDpXsFPpy28",
+                "https://www.youtube.com/embed/KP8Ki6pqZ-0?si=Yut7BylfmUhGNIdC",
+                "https://www.youtube.com/embed/k2XqK_rc3ww?si=zZlSZuROlYZXD3IX",
+                "https://www.youtube.com/embed/hm0_QeJsz1s?si=Lj10Jlz4fZ6HOC4A",
+                "https://www.youtube.com/embed/zIfxBh0RF30?si=YeULGMb7-CTzRein",
+                "https://www.youtube.com/embed/8myuMZyLoUQ?si=54z2QO64F2G4xrxk",
+                "https://www.youtube.com/embed/jRn5waE0qfk?si=_S9lRTZcHPQ7-Iwx",
+                "https://www.youtube.com/embed/FFHKEATnmB4?si=T9NxbVXgWBA6mNgA",
+                "https://www.youtube.com/embed/Sey-9jBLjD4?si=kznSt8MGQqg2dbNk",
+                "https://www.youtube.com/embed/kVl-6-A9ZO4?si=y8wG2qjPcGCTFjpP",
+                "https://www.youtube.com/embed/1kZamIW_F38?si=69nmsnnVvS1JgUQ6",
+                "https://www.youtube.com/embed/kVm5k99PnBk?si=G3Hm9-h0w2WXQs1p",
+                "https://www.youtube.com/embed/pgtmlVqCKxc?si=DLaZnetZuRV-mY_S",
+                "https://www.youtube.com/embed/EVOyRLWfq4M?si=KYY1TtFyNQGHeWIP",
+                "https://www.youtube.com/embed/2-UZb2VD9vs?si=gk-35DEPiT6ZDLX6",
+                "https://www.youtube.com/embed/FDmLnW467gA?si=eK0gfB17_FMqeXwG",
+                "https://www.youtube.com/embed/2GgiZZhO-PA?si=Lge0K_V1GnAvdMzv",
+                "https://www.youtube.com/embed/NsWd15iLDHs?si=rFcy75PDrFzUoezG",
+                "https://www.youtube.com/embed/e_U4XMdkc-k?si=4tEPRDWuIGTlVkmI",
+                "https://www.youtube.com/embed/a-SwBt5Zzt8?si=T3W-ay9CQ3nZ76gr",
+                "https://www.youtube.com/embed/VXr7J7Ss8lA?si=oGkpJQ1rll1gkIlp",
+                "https://www.youtube.com/embed/KAmIHa-Rztg?si=yOTuWoHCuKH7LWdu",
+                "https://www.youtube.com/embed/V-SoIebbX_U?si=PcmF9TflS61G1uX_",
+                "https://www.youtube.com/embed/3KJnnMBHOVQ?si=D6YosKzbZAkt4eXh",
+                "https://www.youtube.com/embed/aK0hXR_XbH8?si=aU4eBesW4HqAIryZ",
+                "https://www.youtube.com/embed/rTfa-9aCTYg?si=trJFC4dQ0gUrct8-",
+                "https://www.youtube.com/embed/kxYyRefZwhA?si=IuUZVpCbF2jdsuQx",
+                "https://www.youtube.com/embed/rFBJJpOa81U?si=XME179hZitbHywgf",
+                "https://www.youtube.com/embed/KVYtxUOUMzA?si=1XLNyxxYjgrsXwsF",
+                "https://www.youtube.com/embed/Ijg1t0AcTXg?si=p7AmLWuwvifM4Wl-",
+                "https://www.youtube.com/embed/nquLB0Hq_Po?si=8HETEoCpZJqczKJ1",
+                "https://www.youtube.com/embed/nxw9Fd_bWa4?si=wSPZk3pHbF_pGO9E",
+                "https://www.youtube.com/embed/VZWdmhazoVk?si=B5tDc73hovKsHTNm",
+                "https://www.youtube.com/embed/p9szq_K12hs?si=JaYFdedZrScO2fkZ",
+                "https://www.youtube.com/embed/W9q02r0CqEs?si=dDfvy_seFwUtKzRi",
+                "https://www.youtube.com/embed/bqqxe6quLZI?si=s9OP7QSjEtUh2Rfa",
+                "https://www.youtube.com/embed/nbH4g_xQH1o?si=vUWE1M2CkXA-ZNlJ",
+                "https://www.youtube.com/embed/vr5dCRHAgb0?si=sfNhdCyuyL5Hb0Gn",
+                "https://www.youtube.com/embed/0ZjCOAnmUaQ?si=EvMc_AXfKjX_rn0s",
+                "https://www.youtube.com/embed/Y9LwFgxB2Kw?si=ZP-C9ji0_7q_cPOd",
+                "https://www.youtube.com/embed/G_xSlRqic5w?si=zwEElxtdqDhk5plJ",
+                "https://www.youtube.com/embed/RAB6hFVIf5s?si=fhCMAPgdAfwx0KLL",
+                "https://www.youtube.com/embed/xCLULLdY4TI?si=UVuaId1TGjNiLLrv",
+                "https://www.youtube.com/embed/nldOap6RFeo?si=VSvu-9VcjkNCEOig",
+                "https://www.youtube.com/embed/A3n1oOvJVQU?si=wtevvBFQnftaYQrg",
+                "https://www.youtube.com/embed/0Gy3xwVgPHk?si=4_vHE430shFXm7RC",
+                "https://www.youtube.com/embed/CV7BcUf_-UE?si=dhQ8Ut02zGf7_gNr",
+                "https://www.youtube.com/embed/0Kc2F693KIA?si=jj7E79FSGJttYtlx",
+                "https://www.youtube.com/embed/FB0MxUWqsPo?si=8Gxq_wCbPTAwLTZB",
+                "https://www.youtube.com/embed/BpI82t1cjiI?si=dpttH6NhJUczGOLG",
+                "https://www.youtube.com/embed/Y_bOxzag_Ck?si=K5OUEaepjA3_rghN",
+                "https://www.youtube.com/embed/ESHyS7bxGP0?si=mZ68E_lo32_0t7F8",
+                "https://www.youtube.com/embed/g9-9CxCxrVE?si=FghRiWCvfALlOUH8",
+                "https://www.youtube.com/embed/6XYen9SO2yo?si=27o7arbw-ZKoqkCH",
+                "https://www.youtube.com/embed/tj7al6MXu7U?si=Pa9bvHgX2G3awZA5",
+                "https://www.youtube.com/embed/ICivMiNuato?si=014WOHtE1qBhRV2f",
+                "https://www.youtube.com/embed/FJ0m4nRNqtU?si=Kbp5WHBtLf5B0ggL",
+                "https://www.youtube.com/embed/wdOthyqOc5s?si=D-Eu82fo7lkAHZmk",
+                "https://www.youtube.com/embed/uz83G-2ny8Q?si=MFDhDhzjfcmdvM3C",
+                "https://www.youtube.com/embed/L-RcXKHxpSY?si=8SHyOrYWtB-Ncp6y",
+                "https://www.youtube.com/embed/xVrJ8DxECbg?si=8W1NoaX4HPVAqXlo",
+                "https://www.youtube.com/embed/4rJfiM7IDbI?si=WQolZ9soH8RAkWtF",
+                "https://www.youtube.com/embed/NGhuLkjl4iI?si=joTNXK3d-dDUlDwY",
+                "https://www.youtube.com/embed/IANwb_qT1gg?si=FycTWhhkMSuXvBPm",
+                "https://www.youtube.com/embed/GebTgDlId1E?si=_B-rJ7Z5JJ7QcN4W",
+                "https://www.youtube.com/embed/Dimk-T-Wxow?si=W-EUwtTaiEsbmlCu",
+                "https://www.youtube.com/embed/VCmwskpxyCg?si=oYJ9DVSUKmcDKfqb",
+                "https://www.youtube.com/embed/pwglOlD7e0M?si=yzX_CJY7rWSlMVVL",
+                "https://www.youtube.com/embed/uirPtj6zGAw?si=nifH0XAE-YQJiG29",
+                "https://www.youtube.com/embed/jRn5waE0qfk?si=LzbZM1OOXPWj1der",
+                "https://www.youtube.com/embed/wUVvQk7XLd4?si=ertoBxoiPS40NnCf",
+                "https://www.youtube.com/embed/h2Y2ssqu8xg?si=O4AZ6R5cL7x8IF1Y",
+                "https://www.youtube.com/embed/9U_OTeqJ-sM?si=UBhHaeSGYVDrJiZL",
+                "https://www.youtube.com/embed/CVOXyyqaTvY?si=B8hXDWERRvaVj8J_",
+                "https://www.youtube.com/embed/9q7Mb9PFVAo?si=B-EntURlKYi_rr4s",
+                "https://www.youtube.com/embed/5cOl_ZTvCiw?si=3vOBENEn4-Js6lis",
+                "https://www.youtube.com/embed/Hvw2cNQUuUc?si=F61KsMEMS73ioD9W",
+                "https://www.youtube.com/embed/l1WxJSduvBc?si=hLk-FIBmoLeUGGLG",
+                "https://www.youtube.com/embed/8FhGOV7fs64?si=WreljIzyhZ3z8Ti5",
+                "https://www.youtube.com/embed/GlOQnsVOa2o?si=ecjWAhFBd3yRQ0jU",
+                "https://www.youtube.com/embed/QKJbj7vcOzE?si=xgbHDYqRkZercygH",
+                "https://www.youtube.com/embed/c8xJtH6UcQY?si=1ddga_5OhtmYFGXb",
+                "https://www.youtube.com/embed/UBv3VLaXmtk?si=2DMoajGswI8oYqfZ",
+                "https://www.youtube.com/embed/lgiGoq0j2m8?si=dul9lQD6J7yhq2eC",
+                "https://www.youtube.com/embed/ICivMiNuato?si=Mt5vsIUWnYsqhmKY",
+                "https://www.youtube.com/embed/qnMxd3s6u-c?si=BqQLSFzwfGaJe_HE",
+                "https://www.youtube.com/embed/pgDE2DOICuc?si=5TnwntMeDKl3iPbW",
+                "https://www.youtube.com/embed/1k0MMxhOVpA?si=Na5fL5b209lvF69L",
+                "https://www.youtube.com/embed/RY44HWeFcow?si=fkff1_SJBZtGrV9p",
+                "https://www.youtube.com/embed/2s9z9Tlumi0?si=EgfUW2_Tq4Z3Wqx5",
+                "https://www.youtube.com/embed/aPO5JaShu2U?si=myI7xmVkqOV6Cvwr",
+                "https://www.youtube.com/embed/s50vvwTystA?si=FtA-_hVgYZlAaT9_",
+                "https://www.youtube.com/embed/s50vvwTystA?si=FtA-_hVgYZlAaT9_",
+                "https://www.youtube.com/embed/s50vvwTystA?si=FtA-_hVgYZlAaT9_",
+                "https://www.youtube.com/embed/s50vvwTystA?si=FtA-_hVgYZlAaT9_",
+                "https://www.youtube.com/embed/spMkaJp975s?si=l0mmRC9bVoyyZJmQ",
+                "https://www.youtube.com/embed/EtKFva7g9DQ?si=N9M3Fmsirb9bwEB-",
+                "https://www.youtube.com/embed/gpB95wf1L3Y?si=lR0EEpQ2dfGu4DRU",
+                "https://www.youtube.com/embed/Xrs6Pzfnonc?si=d5cvCdAYemuIz35V",
+                "https://www.youtube.com/embed/DJY7jj3bxvU?si=HJYVhu90eH471URE",
+                "https://www.youtube.com/embed/qW9I8HZEFVo?si=zoDV2fWzpD6e3D-i",
+                "https://www.youtube.com/embed/GE1lo_tQACw?si=rajDZ1Bxgfjy5zPy",
+                "https://www.youtube.com/embed/WmqFcMdF-yA?si=L0ws4HVZXcyn0OPI",
+                "https://www.youtube.com/embed/T3qlKJ8RiB8?si=3A_ooN6Vuy-DQnYA",
+                "https://www.youtube.com/embed/-e6xOBCAVvA?si=lnqzy9V11YVPrh-G",
+                "https://www.youtube.com/embed/zQQsqqc6p7Y?si=S1CgkMG-mBnRcqS7",
+                "https://www.youtube.com/embed/zQQsqqc6p7Y?si=S1CgkMG-mBnRcqS7",
+                "https://www.youtube.com/embed/3iZFTRMFDuQ?si=wIf12iLpux_Mtw1B",
+                "https://www.youtube.com/embed/hRlmn_w1qck?si=6rfrOnMGdHATkOEE"
+            ];
+
+            const youtubePlayer = document.getElementById('youtubePlayer');
+            const newVideoLink = document.getElementById('newVideoLink');
+
+            function loadRandomVideo() {
+                const randomVideoLink = youtubeLinks[Math.floor(Math.random() * youtubeLinks.length)];
+                youtubePlayer.src = randomVideoLink;
+            }
+
+            loadRandomVideo();
+
+            newVideoLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                loadRandomVideo();
+            });
+        });
+
+        // Bubbles
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.textContent = '🫧';
+            const startX = Math.random() * 100;
+            bubble.style.left = startX + 'vw';
+
+            const fontSizes = [32, 42, 64];
+            const fontSize = fontSizes[Math.floor(Math.random() * fontSizes.length)];
+            bubble.style.fontSize = fontSize + 'px';
+
+            document.body.appendChild(bubble);
+
+            let startTime = Date.now();
+            function meander() {
+                const elapsed = Date.now() - startTime;
+                bubble.style.transform = `translateX(${Math.sin(elapsed / 500) * 20}px)`;
+                requestAnimationFrame(meander);
+            }
+            requestAnimationFrame(meander);
+
+            bubble.addEventListener('click', (event) => {
+                const bang = document.createElement('div');
+                bang.className = 'bang';
+                bang.textContent = '💥';
+                bang.style.left = `${event.clientX}px`;
+                bang.style.top = `${event.clientY}px`;
+                document.body.appendChild(bang);
+
+                setTimeout(() => {
+                    document.body.removeChild(bang);
+                }, 500);
+
+                document.body.removeChild(bubble);
+            });
+
+            bubble.addEventListener('animationend', () => {
+                document.body.removeChild(bubble);
+            });
+
+            setTimeout(createBubble, Math.random() * 5000 + 3000);
+        }
+
+        createBubble();
+    </script>
+</body>
+
+</html>
