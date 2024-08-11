@@ -211,7 +211,7 @@ a.link:active {
     width: 100%;
     max-width: 750px;
     height: auto;
-    aspect-ratio: 0.5;
+    aspect-ratio: 4 / 5;
 
 }
 
