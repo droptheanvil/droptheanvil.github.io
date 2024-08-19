@@ -18,6 +18,10 @@ body *::-moz-selection {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
     width: auto;
     margin: 0;
     justify-content: center;
@@ -33,6 +37,7 @@ body {
 
 /* ––– Text content ––– */
 #contentContainer {
+    flex: 1 0 auto;
     margin: auto;
     width: 100%;
     max-width: 750px;
@@ -61,6 +66,21 @@ h3 {
     font-size: 37.5px;
     font-weight: 100;
     line-height: auto;
+}
+
+footer {
+    flex-shrink: 0;
+    height: 100px;
+    text-align: center;
+    font-size: 10px;
+    opacity: 0.5;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.footer-text {
+    padding: 10px;
 }
 
 a.link,
@@ -211,7 +231,7 @@ a.link:active {
     width: 100%;
     max-width: 750px;
     height: auto;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1.5;
 
 }
 
@@ -283,7 +303,7 @@ td {
 }
 
 .fi-adamh {
-    background: url(assets/friends/adamh.png);
+    background: url(assets/friends/adamh.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -339,7 +359,7 @@ td {
 }
 
 .fi-andrew {
-    background: url(assets/friends/andrew.png);
+    background: url(assets/friends/andrew.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -451,7 +471,7 @@ td {
 }
 
 .fi-callum {
-    background: url(assets/friends/callum.png);
+    background: url(assets/friends/callum.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -491,7 +511,7 @@ td {
 }
 
 .fi-clare {
-    background: url(assets/friends/clare.png);
+    background: url(assets/friends/clare.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -507,7 +527,7 @@ td {
 }
 
 .fi-cruz {
-    background: url(assets/friends/cruz.png);
+    background: url(assets/friends/cruz.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -523,7 +543,7 @@ td {
 }
 
 .fi-dan {
-    background: url(assets/friends/dan.png);
+    background: url(assets/friends/dan.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -555,7 +575,7 @@ td {
 }
 
 .fi-djson {
-    background: url(assets/friends/djson.png);
+    background: url(assets/friends/DJSon.png);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -595,7 +615,7 @@ td {
 }
 
 .fi-emanuelle {
-    background: url(assets/friends/emmanuelle.png);
+    background: url(assets/friends/emmanuelle.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -635,7 +655,7 @@ td {
 }
 
 .fi-fred {
-    background: url(assets/friends/fred.png);
+    background: url(assets/friends/fred.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -683,7 +703,7 @@ td {
 }
 
 .fi-gwen {
-    background: url(assets/friends/gwenn.png);
+    background: url(assets/friends/gwenn.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -715,7 +735,7 @@ td {
 }
 
 .fi-jack {
-    background: url(assets/friends/jack.png);
+    background: url(assets/friends/jack.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -755,7 +775,7 @@ td {
 }
 
 .fi-jill {
-    background: url(assets/friends/jill.png);
+    background: url(assets/friends/jill.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -771,7 +791,7 @@ td {
 }
 
 .fi-jono {
-    background: url(assets/friends/jono.png);
+    background: url(assets/friends/jono.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -779,7 +799,7 @@ td {
 }
 
 .fi-josh {
-    background: url(assets/friends/joshe.png);
+    background: url(assets/friends/JOSHE.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -811,7 +831,7 @@ td {
 }
 
 .fi-karensa {
-    background: url(assets/friends/karensa.png);
+    background: url(assets/friends/karensa.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -851,7 +871,7 @@ td {
 }
 
 .fi-kinkade {
-    background: url(assets/friends/kinkade.png);
+    background: url(assets/friends/kinkade.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -939,7 +959,7 @@ td {
 }
 
 .fi-mattc {
-    background: url(assets/friends/mattc.png);
+    background: url(assets/friends/mattc.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -947,7 +967,7 @@ td {
 }
 
 .fi-matth {
-    background: url(assets/friends/matth.png);
+    background: url(assets/friends/matth.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -955,7 +975,7 @@ td {
 }
 
 .fi-mattl {
-    background: url(assets/friends/mattl.png);
+    background: url(assets/friends/mattl.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -963,7 +983,7 @@ td {
 }
 
 .fi-maya {
-    background: url(assets/friends/mayua.png);
+    background: url(assets/friends/mayua.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -979,7 +999,7 @@ td {
 }
 
 .fi-mei {
-    background: url(assets/friends/mei.png);
+    background: url(assets/friends/mei.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -987,7 +1007,7 @@ td {
 }
 
 .fi-meredith {
-    background: url(assets/friends/meredith.png);
+    background: url(assets/friends/meredith.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -1139,7 +1159,7 @@ td {
 }
 
 .fi-sabina {
-    background: url(assets/friends/sabina.png);
+    background: url(assets/friends/sabina.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -1155,7 +1175,7 @@ td {
 }
 
 .fi-sam {
-    background: url(assets/friends/sam.png);
+    background: url(assets/friends/sam.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -1211,7 +1231,7 @@ td {
 }
 
 .fi-spooky {
-    background: url(assets/friends/spookjy.png);
+    background: url(assets/friends/spookjy.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -1219,7 +1239,7 @@ td {
 }
 
 .fi-stephen {
-    background: url(assets/friends/stephen.png);
+    background: url(assets/friends/stephen.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -1227,7 +1247,7 @@ td {
 }
 
 .fi-sydney {
-    background: url(assets/friends/syd.png);
+    background: url(assets/friends/syd.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -1235,7 +1255,7 @@ td {
 }
 
 .fi-tam {
-    background: url(assets/friends/tam.png);
+    background: url(assets/friends/tam.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
@@ -1243,7 +1263,7 @@ td {
 }
 
 .fi-tech {
-    background: url(assets/friends/tech.png);
+    background: url(assets/friends/tech.PNG);
     background-size: 100% 100%;
     background-size: cover;
     background-position: center;
