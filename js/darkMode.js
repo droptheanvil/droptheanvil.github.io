@@ -12,12 +12,10 @@ function trackMovement(event) {
     const rootElement = document.documentElement;
 
     if (isMobileDevice()) {
-        // Mobile
         const touch = event.touches[0] || event.changedTouches[0];
         rootElement.style.setProperty('--cursorXPos', `${touch.clientX}px`);
         rootElement.style.setProperty('--cursorYPos', `${touch.clientY}px`);
     } else {
-        // Desktop
         rootElement.style.setProperty('--cursorXPos', `${event.clientX}px`);
         rootElement.style.setProperty('--cursorYPos', `${event.clientY}px`);
     }
@@ -37,5 +35,11 @@ document.addEventListener('click', function (event) {
     const rootElement = document.documentElement;
     if (event.target !== toggleButton && !toggleButton.contains(event.target)) {
         rootElement.classList.remove('flashlight-on');
+        playClickSound();
     }
-});
+  });
+  
+  function playClickSound() {
+    const clickSound = new Audio('assets/click.mp3');
+  clickSound.play();
+  }
