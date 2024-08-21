@@ -6,40 +6,40 @@
 
 function isMobileDevice() {
     return /Mobi|Android/i.test(navigator.userAgent);
-}
-
-function trackMovement(event) {
+  }
+  
+  function trackMovement(event) {
     const rootElement = document.documentElement;
-
     if (isMobileDevice()) {
-        const touch = event.touches[0] || event.changedTouches[0];
-        rootElement.style.setProperty('--cursorXPos', `${touch.clientX}px`);
-        rootElement.style.setProperty('--cursorYPos', `${touch.clientY}px`);
+      const touch = event.touches[0] || event.changedTouches[0];
+      rootElement.style.setProperty('--cursorXPos', `${touch.clientX}px`);
+      rootElement.style.setProperty('--cursorYPos', `${touch.clientY}px`);
     } else {
-        rootElement.style.setProperty('--cursorXPos', `${event.clientX}px`);
-        rootElement.style.setProperty('--cursorYPos', `${event.clientY}px`);
+      rootElement.style.setProperty('--cursorXPos', `${event.clientX}px`);
+      rootElement.style.setProperty('--cursorYPos', `${event.clientY}px`);
     }
-}
-
-function toggleFlashlight() {
+  }
+  
+  function toggleFlashlight() {
     const rootElement = document.documentElement;
     rootElement.classList.toggle('flashlight-on');
-}
-
-document.addEventListener(isMobileDevice() ? 'touchmove' : 'mousemove', trackMovement);
-
-const toggleButton = document.getElementById('toggleButton');
-toggleButton.addEventListener('click', toggleFlashlight);
-
-document.addEventListener('click', function (event) {
+  }
+  
+  document.addEventListener(isMobileDevice() ? 'touchmove' : 'mousemove', trackMovement);
+  const toggleButton = document.getElementById('toggleButton');
+  toggleButton.addEventListener('click', toggleFlashlight);
+  
+  document.addEventListener('click', function (event) {
     const rootElement = document.documentElement;
     if (event.target !== toggleButton && !toggleButton.contains(event.target)) {
+      if (rootElement.classList.contains('flashlight-on')) {
         rootElement.classList.remove('flashlight-on');
         playClickSound();
+      }
     }
   });
   
   function playClickSound() {
-    const clickSound = new Audio('assets/click.mp3');
-  clickSound.play();
+    const audio = document.getElementById("myAudio2");
+    audio.play();
   }
