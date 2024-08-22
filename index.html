@@ -275,35 +275,50 @@
     <script type="text/javascript" src="js/click.js"></script>
     <script type="text/javascript" src="js/darkMode.js"></script>
     <script>
+        function isMobileDevice() {
+                return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+            }
+
+            function setOverflowBasedOnDevice() {
+                if (isMobileDevice()) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            window.addEventListener('load', setOverflowBasedOnDevice);
+            window.addEventListener('resize', setOverflowBasedOnDevice);
+        
         // Venn diagram
         const initialPositions = {};
-const offsetX = 20;
-const offsetY = 20;
+        const offsetX = 20;
+        const offsetY = 20;
 
-function saveInitialPositions() {
-    const icons = document.querySelectorAll('.icon');
-    const diagram = document.querySelector('.vendiagram');
-    const diagramRect = diagram.getBoundingClientRect();
+        function saveInitialPositions() {
+            const icons = document.querySelectorAll('.icon');
+            const diagram = document.querySelector('.vendiagram');
+            const diagramRect = diagram.getBoundingClientRect();
 
-    icons.forEach(icon => {
-        const rect = icon.getBoundingClientRect();
-        const topPercentage = ((rect.top - diagramRect.top + offsetY) / diagramRect.height) * 100;
-        const leftPercentage = ((rect.left - diagramRect.left + offsetX) / diagramRect.width) * 100;
-        initialPositions[icon.id] = {
-            top: topPercentage,
-            left: leftPercentage
-        };
-    });
-}
+        icons.forEach(icon => {
+            const rect = icon.getBoundingClientRect();
+            const topPercentage = ((rect.top - diagramRect.top + offsetY) / diagramRect.height) * 100;
+            const leftPercentage = ((rect.left - diagramRect.left + offsetX) / diagramRect.width) * 100;
+            initialPositions[icon.id] = {
+                top: topPercentage,
+                left: leftPercentage
+            };
+        });
+    }
 
-function resetIconPositions() {
-    const icons = document.querySelectorAll('.icon');
-    icons.forEach(icon => {
-        icon.style.position = 'absolute';
-        icon.style.top = `calc(${initialPositions[icon.id].top}%)`;
-        icon.style.left = `calc(${initialPositions[icon.id].left}%)`;
-    });
-}
+    function resetIconPositions() {
+        const icons = document.querySelectorAll('.icon');
+        icons.forEach(icon => {
+            icon.style.position = 'absolute';
+            icon.style.top = `calc(${initialPositions[icon.id].top}%)`;
+            icon.style.left = `calc(${initialPositions[icon.id].left}%)`;
+        });
+    }
 
 window.addEventListener('resize', resetIconPositions);
 window.addEventListener('load', () => {
