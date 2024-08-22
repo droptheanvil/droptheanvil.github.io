@@ -104,6 +104,7 @@
             allowfullscreen></iframe>
 
         <p style="text-align: center;"><a href="#" class="link" id="newVideoLink">Click here for a new video.</a></p>
+        <p style="text-align: center;">🫧&nbsp;Bubbles popped: <span id="bubbleCount">0</span>&nbsp;🫧</p>
     </div>
 
     <footer>
@@ -336,7 +337,6 @@
                 "https://www.youtube.com/embed/s50vvwTystA?si=FtA-_hVgYZlAaT9_",
                 "https://www.youtube.com/embed/s50vvwTystA?si=FtA-_hVgYZlAaT9_",
                 "https://www.youtube.com/embed/s50vvwTystA?si=FtA-_hVgYZlAaT9_",
-                "https://www.youtube.com/embed/spMkaJp975s?si=l0mmRC9bVoyyZJmQ",
                 "https://www.youtube.com/embed/EtKFva7g9DQ?si=N9M3Fmsirb9bwEB-",
                 "https://www.youtube.com/embed/gpB95wf1L3Y?si=lR0EEpQ2dfGu4DRU",
                 "https://www.youtube.com/embed/Xrs6Pzfnonc?si=d5cvCdAYemuIz35V",
@@ -349,7 +349,8 @@
                 "https://www.youtube.com/embed/zQQsqqc6p7Y?si=S1CgkMG-mBnRcqS7",
                 "https://www.youtube.com/embed/zQQsqqc6p7Y?si=S1CgkMG-mBnRcqS7",
                 "https://www.youtube.com/embed/3iZFTRMFDuQ?si=wIf12iLpux_Mtw1B",
-                "https://www.youtube.com/embed/hRlmn_w1qck?si=6rfrOnMGdHATkOEE"
+                "https://www.youtube.com/embed/hRlmn_w1qck?si=6rfrOnMGdHATkOEE",
+                "https://www.youtube.com/embed/5T_ePuuIsOw?si=BaXv5CFfTM9Nv9IU"
             ];
 
             const youtubePlayer = document.getElementById('youtubePlayer');
@@ -369,6 +370,27 @@
         });
 
         // Bubbles
+        let bubblesPopped = 0;
+
+        function showConfetti() {
+            const confetti = document.createElement('img');
+            confetti.src = '/assets/confetti.gif';
+            confetti.style.position = 'fixed';
+            confetti.style.top = '0';
+            confetti.style.left = '0';
+            confetti.style.width = '100%';
+            confetti.style.height = '100%';
+            confetti.style.zIndex = '9999';
+            document.body.appendChild(confetti);
+
+            const yaySound = new Audio('/assets/yay.mp3');
+            yaySound.play();
+
+            setTimeout(() => {
+                document.body.removeChild(confetti);
+            }, 4000);
+        }
+
         function createBubble() {
             const bubble = document.createElement('div');
             bubble.className = 'bubble';
@@ -403,6 +425,13 @@
                 }, 500);
 
                 document.body.removeChild(bubble);
+
+                bubblesPopped++;
+                document.getElementById('bubbleCount').textContent = bubblesPopped;
+
+                if (bubblesPopped === 100) {
+                    showConfetti();
+                }
             });
 
             bubble.addEventListener('animationend', () => {
@@ -412,8 +441,12 @@
             setTimeout(createBubble, Math.random() * 5000 + 3000);
         }
 
-        createBubble();
+        document.addEventListener('DOMContentLoaded', function () {
+            createBubble();
+        });
     </script>
 </body>
+
+</html>
 
 </html>
