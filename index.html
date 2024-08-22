@@ -202,7 +202,7 @@
 
 <body style="max-height: 100%; overflow: hidden;">
     <div id="contentContainer">
-        <h1><a class="home-link" href="https://anvil.cool">ANVIL</a></h1>
+        <h1><a class="home-link" href="https://anvil.cool/">ANVIL</a></h1>
         <audio id="myAudio" src="assets/clang.mp3"></audio>
         <audio id="myAudio2" src="assets/click.mp3"></audio>
 
@@ -211,7 +211,7 @@
                 <form>
                     <select class="menu-dropdown" onchange="redirectToPage(this)">
                         <option value="Menu">Menu</option>
-                        <option value="https://anvil.cool">&#127968;&#xFE0F;&nbsp;Home</option>
+                        <option value="https://anvil.cool/">&#127968;&#xFE0F;&nbsp;Home</option>
                         <optgroup label="Work">
                             <option value="/videodirection">&#128249;&#xFE0F;&nbsp;Video Direction</option>
                             <option value="/analogediting">&#127902;&#xFE0F;&nbsp;Analog Editing</option>
@@ -240,37 +240,35 @@
 
         <div class="vendiagram">
             <div class="work">
-                <div class="icon" id="icon1-left" onclick="window.location.href='videodirection.html'">
-                    <p class="icon-caption"><a class="link" href="videodirection.html">Video&nbsp;Direction</a></p>
+                <div class="icon" id="icon1-left">
+                    <p class="icon-caption"><a class="link" href="/videodirection">Video&nbsp;Direction</a></p>
                 </div>
-                <div class="icon" id="icon2-left" onclick="window.location.href='analogediting.html'">
-                    <p class="icon-caption"><a class="link" href="analogediting.html">Analog&nbsp;Editing</a></p>
+                <div class="icon" id="icon2-left">
+                    <p class="icon-caption"><a class="link" href="/analogediting">Analog&nbsp;Editing</a></p>
                 </div>
-                <div class="icon" id="icon3-left" onclick="window.location.href='galleries.html'">
-                    <p class="icon-caption"><a class="link" href="galleries.html">Galleries</a></p>
+                <div class="icon" id="icon3-left">
+                    <p class="icon-caption"><a class="link" href="/galleries">Galleries</a></p>
                 </div>
             </div>
             <div class="intersect">
-                <div class="icon" id="icon-middle" onclick="window.location.href='about.html'">
-                    <p class="icon-caption"><a class="link" href="about.html">About</a></p>
+                <div class="icon" id="icon-middle">
+                    <p class="icon-caption"><a class="link" href="/about">About</a></p>
                 </div>
             </div>
             <div class="play">
-                <div class="icon" id="icon1-right" onclick="window.location.href='youtubespa.html'">
-                    <p class="icon-caption"><a class="link" href="youtubespa.html">YouTube&nbsp;Spa</a></p>
+                <div class="icon" id="icon1-right">
+                    <p class="icon-caption"><a class="link" href="/youtubespa">YouTube&nbsp;Spa</a></p>
                 </div>
-                <div class="icon" id="icon2-right" onclick="window.location.href='friends.html'">
-                    <p class="icon-caption"><a class="link" href="friends.html">Friends</a></p>
+                <div class="icon" id="icon2-right">
+                    <p class="icon-caption"><a class="link" href="/friends">Friends</a></p>
                 </div>
-                <div class="icon" id="icon3-right" onclick="window.location.href='https://www.yourworldoftext.com/~ANVIL/'">
-                    <p class="icon-caption"><a class="link" href="https://www.yourworldoftext.com/~ANVIL/">Guestbook</a>
-                    </p>
+                <div class="icon" id="icon3-right">
+                    <p class="icon-caption"><a class="link" href="https://www.yourworldoftext.com/~ANVIL/">Guestbook</a></p>
                 </div>
             </div>
             <div class="circle-text left-circle-text"><i>"Work"</i></div>
             <div class="circle-text right-circle-text"><i>"Play"</i></div>
         </div>
-    </div>
 
     <script type="text/javascript" src="js/menuRedirect.js"></script>
     <script type="text/javascript" src="js/clang.js"></script>
@@ -279,92 +277,90 @@
     <script>
         // Venn diagram
         const initialPositions = {};
-        const offsetX = 20;
-        const offsetY = 20;
+const offsetX = 20;
+const offsetY = 20;
 
-        function saveInitialPositions() {
-            const icons = document.querySelectorAll('.icon');
-            const diagram = document.querySelector('.vendiagram');
-            const diagramRect = diagram.getBoundingClientRect();
+function saveInitialPositions() {
+    const icons = document.querySelectorAll('.icon');
+    const diagram = document.querySelector('.vendiagram');
+    const diagramRect = diagram.getBoundingClientRect();
 
-            icons.forEach(icon => {
-                const rect = icon.getBoundingClientRect();
-                const topPercentage = ((rect.top - diagramRect.top + offsetY) / diagramRect.height) * 100;
-                const leftPercentage = ((rect.left - diagramRect.left + offsetX) / diagramRect.width) * 100;
-                initialPositions[icon.id] = {
-                    top: topPercentage,
-                    left: leftPercentage
-                };
-            });
+    icons.forEach(icon => {
+        const rect = icon.getBoundingClientRect();
+        const topPercentage = ((rect.top - diagramRect.top + offsetY) / diagramRect.height) * 100;
+        const leftPercentage = ((rect.left - diagramRect.left + offsetX) / diagramRect.width) * 100;
+        initialPositions[icon.id] = {
+            top: topPercentage,
+            left: leftPercentage
+        };
+    });
+}
+
+function resetIconPositions() {
+    const icons = document.querySelectorAll('.icon');
+    icons.forEach(icon => {
+        icon.style.position = 'absolute';
+        icon.style.top = `calc(${initialPositions[icon.id].top}%)`;
+        icon.style.left = `calc(${initialPositions[icon.id].left}%)`;
+    });
+}
+
+window.addEventListener('resize', resetIconPositions);
+window.addEventListener('load', () => {
+    saveInitialPositions();
+    resetIconPositions();
+    document.querySelectorAll('.icon').forEach(setupIconInteraction);
+});
+
+function setupIconInteraction(icon) {
+    let isDragging = false;
+    let startX, startY;
+
+    icon.addEventListener('mousedown', startDrag);
+    icon.addEventListener('touchstart', startDrag, { passive: false });
+
+    function startDrag(e) {
+        e.preventDefault();
+        isDragging = false;
+        startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+        startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('touchmove', drag, { passive: false });
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('touchend', endDrag);
+    }
+
+    function drag(e) {
+        e.preventDefault();
+        const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+        const currentY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+
+        if (Math.abs(currentX - startX) > 5 || Math.abs(currentY - startY) > 5) {
+            isDragging = true;
+            const deltaX = currentX - startX;
+            const deltaY = currentY - startY;
+            icon.style.left = `${icon.offsetLeft + deltaX}px`;
+            icon.style.top = `${icon.offsetTop + deltaY}px`;
+            startX = currentX;
+            startY = currentY;
         }
+    }
 
-        function resetIconPositions() {
-            const icons = document.querySelectorAll('.icon');
-            const diagram = document.querySelector('.vendiagram');
-            const diagramRect = diagram.getBoundingClientRect();
+    function endDrag() {
+        document.removeEventListener('mousemove', drag);
+        document.removeEventListener('touchmove', drag);
+        document.removeEventListener('mouseup', endDrag);
+        document.removeEventListener('touchend', endDrag);
 
-            icons.forEach(icon => {
-                const iconWidth = icon.offsetWidth;
-                const iconHeight = icon.offsetHeight;
-                icon.style.position = 'absolute';
-                icon.style.top = `calc(${initialPositions[icon.id].top}%`;
-                icon.style.left = `calc(${initialPositions[icon.id].left}%`;
-            });
-        }
-
-        window.addEventListener('resize', resetIconPositions);
-        window.addEventListener('load', () => {
-            saveInitialPositions();
-            resetIconPositions();
-            document.querySelectorAll('.icon').forEach(dragElement);
-        });
-
-        function dragElement(elmnt) {
-            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            elmnt.addEventListener("mousedown", dragMouseDown);
-            elmnt.addEventListener("touchstart", dragMouseDown, { passive: true });
-
-            function dragMouseDown(e) {
-                e = e || window.event;
-                e.preventDefault();
-                if (e.type === "touchstart") {
-                    pos3 = e.touches[0].clientX;
-                    pos4 = e.touches[0].clientY;
-                } else {
-                    pos3 = e.clientX;
-                    pos4 = e.clientY;
-                }
-                document.addEventListener("mouseup", closeDragElement);
-                document.addEventListener("touchend", closeDragElement, { passive: true });
-                document.addEventListener("mousemove", elementDrag);
-                document.addEventListener("touchmove", elementDrag, { passive: true });
-            }
-
-            function elementDrag(e) {
-                e = e || window.event;
-                e.preventDefault();
-                if (e.type === "touchmove") {
-                    pos1 = pos3 - e.touches[0].clientX;
-                    pos2 = pos4 - e.touches[0].clientY;
-                    pos3 = e.touches[0].clientX;
-                    pos4 = e.touches[0].clientY;
-                } else {
-                    pos1 = pos3 - e.clientX;
-                    pos2 = pos4 - e.clientY;
-                    pos3 = e.clientX;
-                    pos4 = e.clientY;
-                }
-                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-            }
-
-            function closeDragElement() {
-                document.removeEventListener("mouseup", closeDragElement);
-                document.removeEventListener("touchend", closeDragElement);
-                document.removeEventListener("mousemove", elementDrag);
-                document.removeEventListener("touchmove", elementDrag);
+        if (!isDragging) {
+            const link = icon.querySelector('.link');
+            if (link) {
+                window.location.href = link.getAttribute('href');
             }
         }
+    }
+}
     </script>
 </body>
 
