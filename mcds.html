@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>IN MEMORIUM</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+
+    <style>
+        body,
+        html {
+            margin: 0;
+        }
+
+        body {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        #content-container {
+            padding: 20px;
+        }
+
+        #slideshow-container {
+            width: 100%;
+            max-width: 750px;
+            aspect-ratio: 3 / 2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slideshow {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gold-frame {
+            border: 10px ridge rgb(255, 183, 0);
+        }
+
+        .active {
+            opacity: 1;
+        }
+
+        .timer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #elapsed-time {
+            font-size: 16px;
+        }
+
+        #elapsed-time .highlight {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        #elapsed-time .top-bottom {
+            font-size: 16px;
+        }
+
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        #splash-screen img {
+            max-width: 60%;
+            max-height: 60%;
+        }
+
+        footer {
+            flex-shrink: 0;
+            height: 100px;
+            text-align: center;
+            font-size: 10px;
+            opacity: 0.5;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .footer-text {
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-family: "Dancing Script", cursive;
+        }
+
+        #audio-emoji {
+            font-size: 30px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="splash-screen">
+        <img src="assets/mcd/goodevening.png" alt="Good Evening">
+    </div>
+
+    <div id="content-container">
+        <div id="audio-emoji">🔊</div>
+        <audio id="audioPlayer" src="assets/mcd/op9no2.mp3"></audio>
+
+        <figcaption style="font-size:10px;">FROM THE DESK OF <a href="https://anvil.cool">ANVIL</a>&nbsp;&#x00A9;
+        </figcaption>
+
+        <h1>In memorium</h1>
+
+        <div style="width:100%; max-width:750px;">
+            <p>We remember the last time the White House hosted a meal that
+                defied all expectations.</p>
+        </div>
+
+        <div class="timer">
+            <p id="elapsed-time">
+                <span class="top-bottom">&#128197;&nbsp;&nbsp;It has been&nbsp;&nbsp;&#128197;</span><br><br>
+                <span class="highlight" id="time-details">X YEARS, Y MONTHS, X DAYS, Y HOURS, Z MINUTES</span><br><br>
+                <span class="top-bottom">Since there has been a McDonald's dinner in the White House</span>
+            </p>
+        </div>
+
+        <div id="slideshow-container" class="gold-frame">
+            <div class="slideshow fade">
+                <img src="assets/mcd/01.jpg" alt="Image 1">
+            </div>
+            <div class="slideshow fade">
+                <img src="assets/mcd/02.jpg" alt="Image 2">
+            </div>
+            <div class="slideshow fade">
+                <img src="assets/mcd/03.jpg" alt="Image 3">
+            </div>
+            <div class="slideshow fade">
+                <img src="assets/mcd/04.jpg" alt="Image 3">
+            </div>
+            <div class="slideshow fade">
+                <img src="assets/mcd/05.jpg" alt="Image 3">
+            </div>
+            <div class="slideshow fade">
+                <img src="assets/mcd/06.jpg" alt="Image 3">
+            </div>
+            <div class="slideshow fade">
+                <img src="assets/mcd/07.jpg" alt="Image 3">
+            </div>
+            <div class="slideshow fade">
+                <img src="assets/mcd/08.jpg" alt="Image 3">
+            </div>
+            <div class="slideshow fade">
+                <img src="assets/mcd/09.jpg" alt="Image 3">
+            </div>
+        </div>
+
+        <p style="font-size:10px">*&nbsp;<a href="https://anvil.cool">ANVIL</a> does not support Donald Trump or
+            Mcdonald's.
+            <br> This page is to strictly to pay homage to a moment of cultural signifigance.
+        </p>
+
+        <div style="width:100%; max-width:750px;">
+            <p>In 2019, then-President Donald Trump served McDonald's to the Clemson
+                University football team, who were being honored for their national championship victory.</p>
+
+            <p>For many, the sight of burgers and fries on silver platters in the grand halls of the White House was a
+                bittersweet reminder of simpler times, where even the highest office in the land could embrace
+                the comfort and nostalgia of fast food. Now, as time has passed, that night stands as a symbol of a
+                presidency
+                that often blurred the lines between the traditional and the unconventional, leaving behind a wistful
+                memory
+                of
+                a moment that was as fleeting as it was unforgettable.</p>
+
+            <img style="width:100%; max-width:750px;" src="assets/mcd/10.jpg">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-text">&#x00A9;&nbsp;ANVIL&nbsp;&#128165;&#xFE0F;&nbsp;2024</div>
+    </footer>
+
+    <script>
+        // Slideshow
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slideshow');
+
+        function showSlides() {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].classList.add('active');
+            setTimeout(showSlides, 3000);
+        }
+
+        window.onload = function () {
+            showSlides();
+        }
+
+        // Time
+        function updateTimer() {
+            const startDate = new Date('January 14, 2019 00:00:00 GMT');
+            const now = new Date();
+            const elapsed = now - startDate;
+
+            const msInSecond = 1000;
+            const msInMinute = 60 * msInSecond;
+            const msInHour = 60 * msInMinute;
+            const msInDay = 24 * msInHour;
+            const msInMonth = 30.44 * msInDay;
+            const msInYear = 365.25 * msInDay;
+
+            const years = Math.floor(elapsed / msInYear);
+            const months = Math.floor((elapsed % msInYear) / msInMonth);
+            const days = Math.floor((elapsed % msInMonth) / msInDay);
+            const hours = Math.floor((elapsed % msInDay) / msInHour);
+            const minutes = Math.floor((elapsed % msInHour) / msInMinute);
+
+            document.getElementById('time-details').textContent = `${years} YEARS, ${months} MONTHS, ${days} DAYS, ${hours} HOURS, ${minutes} MINUTES`;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        window.addEventListener('load', function () {
+            const splashScreen = document.getElementById('splash-screen');
+
+            setTimeout(function () {
+                splashScreen.style.opacity = '0';
+
+                setTimeout(function () {
+                    splashScreen.style.display = 'none';
+                }, 1000);
+            }, 1500);
+        });
+
+        // Music
+        const audioEmoji = document.getElementById('audio-emoji');
+        const audioPlayer = document.getElementById('audioPlayer');
+        let isPlaying = false;
+
+        audioEmoji.addEventListener('click', () => {
+            if (isPlaying) {
+                audioPlayer.pause();
+                audioEmoji.textContent = '🔊';
+            } else {
+                audioPlayer.play();
+                audioEmoji.textContent = '🔇';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Update emoji when audio ends
+        audioPlayer.addEventListener('ended', () => {
+            audioEmoji.textContent = '🔊';
+            isPlaying = false;
+        });
+    </script>
+
+</body>
+
+</html>
