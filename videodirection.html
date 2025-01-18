@@ -99,11 +99,16 @@
 
         <br>
         <br>
-
+        
         <div class="entry">
             <div class="video-title">ANVIL Director's Reel</div>
             <div class="video-link">[<a href="https://www.youtube.com/embed/t3ver0b_Dyk?si=qaDtDGgMTdOc869_" class="link"
                 data-src="https://www.youtube.com/embed/t3ver0b_Dyk?si=qaDtDGgMTdOc869_">watch</a>]</div>
+        </div>
+        <div class="entry">
+            <div class="video-title"> Perrier - Bein' Green</div>
+            <div class="video-link">[<a href="https://www.youtube.com/embed/Qk82UohmJcA?si=_cEV_mFhKPx6263j" class="link"
+                data-src="https://www.youtube.com/embed/Qk82UohmJcA?si=_cEV_mFhKPx6263j" onclick="openInNewTab('https://www.youtube.com/watch?v=Qk82UohmJcA')">watch</a>]</div>
         </div>
         <div class="entry">
             <div class="video-title">Where the Mountains Grow Out The Pines
@@ -128,6 +133,11 @@
     <script type="text/javascript" src="js/click.js"></script>
     <script type="text/javascript" src="js/darkMode.js"></script>
     <script>
+        // Temp new tab for Perrier ad
+        function openInNewTab(url) {
+            window.open(url, '_blank');
+        }
+
         // Dynamic iFrame
         document.addEventListener('DOMContentLoaded', function() {
             const links = document.querySelectorAll('.link');
